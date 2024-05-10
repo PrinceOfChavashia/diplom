@@ -1,13 +1,12 @@
 <template>
-    <div class="card" v-if="not == 0">
-        <img class="last" :src="img" alt="" @click="$emit('ShowDetailed', {name, opi, price, sale, img, weight, country})">
+    <div class="card">
+        <img class="last" :src="img" alt="" @click="$emit('ShowDetailed', {name, opi, price, sale, img, weight})">
         <div class="card_small">
-            <div class="card_text" @click="$emit('ShowDetailed', {name, opi, price, sale, img, weight, country})">
+            <div class="card_text" @click="$emit('ShowDetailed', {name, opi, price, sale, img, weight})">
                 <p class="card_name">{{name}}</p>
-                <p class="card_price">{{price}} $<span class="card_weight">/ {{weight}} g.</span></p>
-                <p class="card_country">Manufacturer: {{country}}</p>
+                <p class="card_price">{{price}} $ / {{weight}} g.</p>
             </div>
-            <button class="buttonDef">More details</button>
+            <button class="buttonDef">To the catalog</button>
         </div>
     </div>
 </template>
@@ -46,14 +45,6 @@ export default {
             type: Int32Array,
             default: 0
         },
-        country:{
-            type: String,
-            default: ""
-        },
-        not:{
-            type: Int32Array,
-            default: 0
-        },
         but:{
             type: String,
             default: "Buy"
@@ -83,23 +74,15 @@ export default {
         font-size: 16px;
         margin-top: 8px;
     }
-    .card_weight{
-        opacity: 0.7;
-    }
-    .card_country{
-        margin-top: 12px;
-        font-size: 14px;
-        color: #A64574;
-    }
-    /* .card_but{
+    .card_but{
         margin-top: 10px;
         margin-left: 20px;
-    } */
+    }
     .buttonDef{
         margin-top: 10px;
         font-family: Varela Round;
         background: #A64574;
-        color: #fff;
+        color: #FFD4E9;
         padding: 5px 15px;
         border-radius: 20px;
     } 

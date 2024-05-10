@@ -858,10 +858,11 @@ export default({
   },
   mounted() {
     axios.get(`http://diplom/php/katalog/`).then(response => {
-      this.store.state.katalog = response.data
+		this.store.state.katalog = response.data;
+		console.log(this.store.state.katalog);
     })
 	axios.get(`http://diplom/php/main/`).then(response => {
-      this.store.state.main = response.data
+      this.store.state.main = response.data;
     })
   },
 })

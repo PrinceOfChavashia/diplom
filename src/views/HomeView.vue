@@ -1030,7 +1030,7 @@
 	<h2 class="title">MARMALADE CATALOG</h2>
     <p class="title_description">Here you will find only fresh and certified products from our production</p>
 	<div class="main_tovarMain">
-		<tovarKatalog class="tovarKatalog" v-for="el in $store.state.main" :key="el"
+		<tovarMain class="tovarKatalog" v-for="el in $store.state.main" :key="el"
         :name="el.name"
         :img="el.img"
         :price="el.price"
@@ -1861,13 +1861,13 @@
 
 <script>
 
-import tovarKatalog from "../components/tovarKatalog.vue";
+import tovarMain from "../components/tovarMain.vue";
 import axios from 'axios';
 
 export default({
   name: 'App',
   components: {
-    tovarKatalog
+    tovarMain
   },
   data(){
     return{
@@ -1889,7 +1889,8 @@ export default({
   },
   mounted() {
     axios.get(`http://diplom/php/katalog/`).then(response => {
-      this.$store.state.katalog = response.data
+		this.$store.state.katalog = response.data;
+		console.log(this.$store.state.katalog);
     })
 	axios.get(`http://diplom/php/main/`).then(response => {
       this.$store.state.main = response.data

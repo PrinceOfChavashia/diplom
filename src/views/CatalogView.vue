@@ -83,7 +83,7 @@
           </div>
         </div>
         <div class="tagi">
-          <tagSelect v-for="i in $store.state.tagi" :key="i"
+          <tagSelect v-for="i in $store.state.tagi" :key="i" @click="non_filtr(i); non_tag(i)"
           :name="i"/>
           <!-- <div class="tag">
             <svg width="8.000000" height="8.000000" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -98,13 +98,28 @@
       </div>
     </div>
   </section>
+  <section class="catalog">
+    <div class="catalog_wrapper">
+      <tovarKatalog class="tovarKatalog" v-for="el in $store.state.katalog" :key="el"
+      :name="el.name"
+      :img="el.img"
+      :price="el.price"
+      :sale="el.sale"
+      :weight="el.weight"
+      :country="el.country"
+      :not="el.not"
+      />
+    </div>
+  </section>
 </template>
 
 <script>
+  import tovarKatalog from "../components/tovarKatalog.vue";
   import tagSelect from "../components/tagSelect.vue";
   export default {
     components: {
       tagSelect,
+      tovarKatalog,
     },
     data() {
       return {
@@ -198,97 +213,170 @@
       push_tag(i){
         switch(i){
           case 1:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_1.textContent);
+            let tag_mmm = this.$refs.select_option_1.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
+            
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_1.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              //this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
           case 2:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_2.textContent);
+            let tag_mmm = this.$refs.select_option_2.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_2.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
           case 3:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_3.textContent);
+            let tag_mmm = this.$refs.select_option_3.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
+
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_3.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
           case 4:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_4.textContent);
+            let tag_mmm = this.$refs.select_option_4.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
+
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_4.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
           case 5:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_5.textContent);
+            let tag_mmm = this.$refs.select_option_5.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
+
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_5.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
           case 6:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_6.textContent);
+            let tag_mmm = this.$refs.select_option_6.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
+
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_6.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
           case 7:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_7.textContent);
+            let tag_mmm = this.$refs.select_option_7.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
+
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_7.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
           case 8:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_8.textContent);
+            let tag_mmm = this.$refs.select_option_8.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
+
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_8.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
           case 9:{
-            let tag = this.$store.state.tagi.indexOf(this.$refs.select_option_9.textContent);
+            let tag_mmm = this.$refs.select_option_9.textContent;
+            let tag = this.$store.state.tagi.indexOf(tag_mmm);
+
             if(tag == -1){
-              this.$store.state.tagi.push(this.$refs.select_option_9.textContent);
+              this.$store.state.tagi.push(tag_mmm);
+              this.filtr(tag_mmm);
             }
             else{
-              this.$store.state.tagi.splice(tag, 1);
+              this.non_tag(tag);
+              this.non_filtr(tag_mmm);
             }
             return;
           }
         }
-      }
+      },
+      non_tag(tag){
+        this.$store.state.tagi.splice(tag, 1);
+      },
+      filtr(tag){
+        //let index_mas = [];
+        this.$store.state.katalog.forEach(element=> {
+          if(element.tagi.indexOf(tag) == -1){
+            element.not++;
+            // let i = element.id-1;
+            // index_mas.push(i);
+            //this.$store.state.katalog.splice(i, 1);
+            //console.log("");
+          }
+        });
+        // console.log(this.$store.state.katalog)
+        // console.log(index_mas);
+        // let i = 0;
+        // index_mas.forEach(el=>{
+        //   console.log(i);
+        //   this.$store.state.katalog.splice(el-i, 1)
+        //   i++;
+        // })
+        // console.log(this.$store.state.katalog)
+      },
+      non_filtr(tag){
+        this.$store.state.katalog.forEach(element=> {
+          if(element.tagi.indexOf(tag) == -1){
+            element.not--;
+            console.log(element);
+            // let i = element.id-1;
+            // index_mas.push(i);
+            //this.$store.state.katalog.splice(i, 1);
+            //console.log("");
+          }
+        });
+      },
+
     },
   }
 </script>
@@ -385,4 +473,15 @@
       }
     }
   }  
+  .catalog{
+    width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);
+    margin: auto;
+  
+    .catalog_wrapper{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      row-gap: 50px;
+    }
+  }
 </style>

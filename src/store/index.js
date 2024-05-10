@@ -7,6 +7,7 @@ export default createStore({
     katalog: [],
     main: [],
     tagi: [],
+    not_run_js: 0,
     nav_hint: "",
     active_select_type: false,
     active_select_price: false,

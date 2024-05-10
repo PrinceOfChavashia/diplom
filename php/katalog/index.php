@@ -28,7 +28,7 @@ $Q->execute();
 $json = array();
 $result = $Q->fetchAll();
 foreach($result as $row){
-    $json[] = array('id'=>$row['id'], 'name'=>$row['name'], 'opi'=>$row['opi'], 'img'=>$row['img'], 'price'=>$row['price'], 'sale'=>$row['sale'], 'weight'=>$row['weight'], 'sum'=>$row['sum']);
+    $json[] = array('id'=>$row['id'], 'name'=>$row['name'], 'opi'=>$row['opi'], 'img'=>$row['img'], 'price'=>$row['price'], 'sale'=>$row['sale'], 'weight'=>$row['weight'], 'sum'=>$row['sum'], 'country'=>$row['country'], 'tagi'=>$row['tagi'], 'type'=>$row['type'], 'not'=>$row['not']);
 }
 
 print(json_encode($json));

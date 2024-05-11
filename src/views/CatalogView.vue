@@ -10,10 +10,10 @@
     </div>
     <h2 class="title">MARMALADE CATALOG</h2>
     <div class="fil_type">
-      <button ref="green_1" @click="active_green(1)">All</button>
-      <button ref="green_2" @click="active_green(2)">Chewing marmalade</button>
-      <button ref="green_3" @click="active_green(3)">Sour marmalade</button>
-      <button ref="green_4" @click="active_green(4)">Marmalade sets</button>
+      <button class="green" ref="green_1" @click="active_green(1); push_tag(10)">All</button>
+      <button ref="green_2" @click="active_green(2); push_tag(1)">Chewing marmalade</button>
+      <button ref="green_3" @click="active_green(3); push_tag(2)">Sour marmalade</button>
+      <button ref="green_4" @click="active_green(4); push_tag(3)">Marmalade sets</button>
     </div>
     <div class="sort">
       <div class="sort_left">
@@ -82,9 +82,10 @@
             </div>
           </div>
         </div>
-        <div class="tagi">
+        <div class="tagi" v-if="$store.state.tagi.length != 0">
           <tagSelect v-for="i in $store.state.tagi" :key="i" @click="non_filtr(i); non_tag(i)"
           :name="i"/>
+          <p class="tagi_clear" @click="clear_filter_all()">Clear all</p>
           <!-- <div class="tag">
             <svg width="8.000000" height="8.000000" viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <defs/>
@@ -93,14 +94,24 @@
             <p class="tag_text">Chewing marmalade</p>
           </div> -->
         </div>
+        <p class="sort_found">Found: {{ found_vse }}</p>
       </div>
       <div class="sort_right">
+        <div class="search">
+          <input v-model="this.$store.state.search" name="search" type="text" placeholder="Search..." />
+          <div class="search_svg">
+            <svg width="15.000000" height="15.000000" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <defs/>
+              <path id="path935" d="M9 -0.5C12.03 -0.5 14.5 1.96 14.5 5C14.5 8.03 12.03 10.5 9 10.5C7.66 10.5 6.43 10.02 5.48 9.22L0.35 14.35C-0.12 14.82 -0.83 14.11 -0.36 13.64L4.77 8.51C3.98 7.56 3.5 6.33 3.5 5C3.5 1.96 5.97 -0.5 9 -0.5ZM9 0.5C6.51 0.5 4.5 2.5 4.5 5C4.5 7.49 6.51 9.5 9 9.5C11.49 9.5 13.5 7.49 13.5 5C13.5 2.5 11.49 0.5 9 0.5Z" fill="#A64574" fill-opacity="0.700000" fill-rule="nonzero"/>
+            </svg>
+          </div>
+        </div>
       </div>
     </div>
   </section>
   <section class="catalog">
     <div class="catalog_wrapper">
-      <tovarKatalog class="tovarKatalog" v-for="el in $store.state.katalog" :key="el"
+      <tovarKatalog class="tovarKatalog" v-for="el in filteredData" :key="el"
       :name="el.name"
       :img="el.img"
       :price="el.price"
@@ -131,9 +142,9 @@
         switch(i){
           case 1:{
             this.$refs.green_1.classList.add('green');
-            this.$refs.green_2.classList.remove('green')
-            this.$refs.green_3.classList.remove('green')
-            this.$refs.green_4.classList.remove('green')
+            this.$refs.green_2.classList.remove('green');
+            this.$refs.green_3.classList.remove('green');
+            this.$refs.green_4.classList.remove('green');
             return;
           }
           case 2:{
@@ -187,6 +198,7 @@
           console.log("add");
         }
         this.$store.state.active_select_type = !this.$store.state.active_select_type;
+        //console.log(this.filteredData);
       },
       active_select_price(){
         if(this.$store.state.active_select_price){
@@ -338,6 +350,44 @@
             }
             return;
           }
+          case 10:{
+            let chewing = this.$store.state.tagi.indexOf("Chewing marmalade");
+            let sour = this.$store.state.tagi.indexOf("Sour marmalade");
+            let sets = this.$store.state.tagi.indexOf("Marmalade sets");
+            if(chewing != -1){
+              this.$store.state.katalog.forEach(element=> {  
+                if(element.type != "Chewing marmalade"){
+                  element.not--;
+                  if(this.$store.state.katalog.length > this.$store.state.found){
+                    this.$store.state.found++;
+                  }
+                  this.non_tag("Chewing marmalade");
+                }
+              })
+            }
+            if(sour != -1){
+              this.$store.state.katalog.forEach(element=> {  
+                if(element.type != "Sour marmalade"){
+                  element.not--;
+                  if(this.$store.state.katalog.length > this.$store.state.found){
+                    this.$store.state.found++;
+                  }
+                  this.non_tag("Sour marmalade");
+                }
+              })
+            }
+            if(sets != -1){
+              this.$store.state.katalog.forEach(element=> {  
+                if(element.type != "Marmalade sets"){
+                  element.not--;
+                  if(this.$store.state.katalog.length > this.$store.state.found){
+                    this.$store.state.found++;
+                  }
+                  this.non_tag("Marmalade sets");
+                }
+              })
+            }
+          }
         }
       },
       non_tag(tag){
@@ -348,6 +398,9 @@
         this.$store.state.katalog.forEach(element=> {
           if(element.tagi.indexOf(tag) == -1){
             element.not++;
+            if(this.$store.state.found > 0){
+              this.$store.state.found--;
+            }
             // let i = element.id-1;
             // index_mas.push(i);
             //this.$store.state.katalog.splice(i, 1);
@@ -368,15 +421,35 @@
         this.$store.state.katalog.forEach(element=> {
           if(element.tagi.indexOf(tag) == -1){
             element.not--;
-            console.log(element);
-            // let i = element.id-1;
-            // index_mas.push(i);
-            //this.$store.state.katalog.splice(i, 1);
-            //console.log("");
+            //console.log(element);
+            if(this.$store.state.katalog.length > this.$store.state.found){
+              this.$store.state.found++;
+            }
           }
         });
       },
-
+      clear_filter_all(){
+        this.$store.state.tagi.splice(0, this.$store.state.tagi.length);
+        this.$store.state.katalog.forEach(element=> {
+          element.not=0;
+          if(this.$store.state.katalog.length > this.$store.state.found){
+            this.$store.state.found++;
+          }
+        })
+      },
+    },
+    computed: {
+      filteredData() {
+        let massa = this.$store.state.katalog.filter(({ name, country }) => [name, country].some(val => val.toLowerCase().includes(this.$store.state.search.toLowerCase())));
+        console.log(massa.length);
+        //this.$store.state.found = massa.length;
+        return massa;
+      },
+      found_vse(){
+        let ret = this.filteredData.length;
+        ret -= this.$store.state.found;
+        return ret;
+      },
     },
   }
 </script>
@@ -386,11 +459,13 @@
     width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);
     margin: auto;
     font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 
     .nav_hint{
       display: flex;
       gap: 5px;
-
+      margin-bottom: 40px ;
       
       .nav_hint_left{
         color: #A64574B3;
@@ -406,6 +481,8 @@
       display: flex;
       justify-content: center;
       gap: 30px;
+      margin-top: 40px;
+      margin-bottom: 40px;
 
       button{
         color: #A64574;
@@ -418,61 +495,91 @@
         color: #81A645;
       }
     }
-
-    .select{
+    .sort{
       display: flex;
-      gap: 20px;
-      .select_type{
-        .select_but{
-          display: flex;
-          align-items: center;
+      justify-content: space-between;
+
+      .sort_left{
+        .sort_found{
           font-size: 16px;
           color: #A64574;
         }
-        .select_type_none{
-          display: none;
+        .select{
+          display: flex;
+          gap: 20px;
+          margin-bottom: 20px;
+        
+          .select_type{
+            .select_but{
+              display: flex;
+              align-items: center;
+              font-size: 16px;
+              color: #A64574;
+            }
+            .select_type_none{
+              display: none;
+            }
+          }
+        }
+      
+        .select_option{
+          background-color: #FFD4E9;
+          color: #A64574;
+          display: inline-flex;
+          flex-direction: column;
+          padding: 5px 0;
+          box-shadow: 0px 0px 15px 3px rgba(166, 69, 116, 0.25);
+          position: absolute;
+        
+          .option{
+            padding: 5px 5px;
+          }
+        
+          .option:hover{
+            background-color: #edb8d2;
+            opacity: 0.8;
+          }
+        }
+        .tagi{
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+          align-items: center;
+        
+          .tagi_clear{
+            color: #A64574;
+            text-decoration: underline dotted;
+          }
+          .tag{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #d794b4;
+            color:#A64574;
+            padding: 4px 9px;
+            border-radius: 15px;
+          }
+          .tag:hover{
+            background-color: #edb8d2;
+            color:#A64574;
+            opacity: 0.7;
+          }
         }
       }
+      .sort_right{
+        .search{
+          display: inline-flex;
+          border: 1px solid rgba(166, 69, 116, 0.45);
+          border-radius: 5px;
+          background: rgba(166, 69, 116, 0.3);
+
+          .search_svg{
+            border-left: 1px solid rgba(166, 69, 116, 0.45);
+          }
+        }
+      }  
     }
-
-    .select_option{
-      background-color: #FFD4E9;
-      color: #A64574;
-      display: inline-flex;
-      flex-direction: column;
-      padding: 5px 0;
-      box-shadow: 0px 0px 15px 3px rgba(166, 69, 116, 0.25);
-      position: absolute;
-
-      .option{
-        padding: 5px 5px;
-      }
-
-      .option:hover{
-        background-color: #edb8d2;
-        opacity: 0.8;
-      }
-    }
-    .tagi{
-      display: flex;
-      gap: 10px;
-
-      .tag{
-        display: flex;
-        align-items: center;
-        gap: 5px;
-        background-color: #d794b4;
-        color:#A64574;
-        padding: 4px 9px;
-        border-radius: 15px;
-      }
-      .tag:hover{
-        background-color: #edb8d2;
-        color:#A64574;
-        opacity: 0.7;
-      }
-    }
-  }  
+  }
   .catalog{
     width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);
     margin: auto;

@@ -1891,6 +1891,7 @@ export default({
     axios.get(`http://diplom/php/katalog/`).then(response => {
 		this.$store.state.katalog = response.data;
 		console.log(this.$store.state.katalog);
+		this.$store.state.found = this.$store.state.katalog.length;
     })
 	axios.get(`http://diplom/php/main/`).then(response => {
       this.$store.state.main = response.data

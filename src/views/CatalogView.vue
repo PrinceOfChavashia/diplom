@@ -838,7 +838,6 @@
         }
       },
       katalog_kolvo(){
-        //console.log();
         if(this.$store.state.katalog_kolvo < this.$store.state.katalog.length){
           this.$store.state.katalog_kolvo+=3;
           if(this.$store.state.katalog_kolvo >= this.$store.state.katalog.length){
@@ -848,7 +847,6 @@
         else{
           this.$refs.but_more.classList.add('but_more_close');
         }
-        //console.log(this.$store.state.katalog_kolvo);
       },
       // order(i){
       //   switch(i){
@@ -914,7 +912,7 @@
         opacity: 0.7;
       }
       .nav_hint_right{
-        color: #A64574B3;
+        color: #A64574;
       }
     }
 

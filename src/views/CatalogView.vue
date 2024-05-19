@@ -548,7 +548,7 @@
           console.log("add");
         }
         this.$store.state.active_select_type = !this.$store.state.active_select_type;
-        console.log(this.filteredData);
+        //sssconsole.log(this.filteredData);
       },
       active_select_price(){
         if(this.$store.state.active_select_price){
@@ -590,7 +590,6 @@
             // console.log(this.filteredData);
             let tag_mmm = this.$refs.select_option_1.textContent;
             let tag = this.$store.state.tagi.indexOf(tag_mmm);
-            
             if(tag == -1){
               this.$store.state.tagi.push(tag_mmm);
               this.filtr(tag_mmm);

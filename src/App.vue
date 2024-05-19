@@ -859,12 +859,19 @@ export default({
   mounted() {
     axios.get(`http://diplom/php/katalog/`).then(response => {
 		this.store.state.katalog = response.data;
-		console.log(this.store.state.katalog);
+		//console.log(this.store.state.katalog);
     })
 	axios.get(`http://diplom/php/main/`).then(response => {
       this.store.state.main = response.data;
     })
+	//this.initialize();
   },
+  methods:{
+    // initialize(){
+    //    this.store.state.user = JSON.parse(localStorage.getItem('user'))
+    // //console.log(JSON.parse(localStorage.getItem('user')));
+    // },
+  }
 })
 </script>
 

@@ -30,7 +30,7 @@
             <a class="anchor" href="#return">return</a>
         </div>
     </section>
-    <section class="anchors_text">
+    <section class="anchors_text width">
         <div class="anchor_text">
             <a name="payment"></a>
             <h3 class="title">1. PAYMENT</h3>

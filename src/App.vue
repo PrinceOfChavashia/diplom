@@ -978,6 +978,56 @@ body{
 	color: #A64574;
 	margin-bottom: 48px;
 }
+.tovar_detal{
+	margin-top: 50px;
+
+	.tovar_back{
+		display: flex;
+		justify-content: center;
+		//align-items: center;
+		gap: 10px;
+		color: #A64574;
+		position: absolute;
+		left: 0;
+		height: 400px;
+		width: 300px;
+	}
+	// .tovar_back:hover{
+	// 	background-color: #A64574;
+	// }
+	.detal_tovar{
+		display: flex;
+		justify-content: center;
+		gap: 40px;
+
+		.detal_tovar_img{
+			width: clamp(24.714rem, 23.72rem + 3.71vw, 27.643rem);
+			height: 473px;
+		}
+		.detal_tovar_infa{
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			gap: 20px;
+			width: 448px;
+			color: #A64574;
+
+			.detal_tovar_name{
+				font-size: 24px;
+			}
+			.detal_tovar_buy{
+				background-color: #A64574;
+				border-radius: 10px;
+				padding: 10px;
+				font-size: 20px;
+				color: #fff;
+			}
+			.detal_tovar_price{
+				font-size: 20px;
+			}
+		}
+	}
+}
 footer{
 	margin: auto;
 	width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);

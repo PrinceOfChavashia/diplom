@@ -1026,7 +1026,7 @@
       </template>
     </Carousel>
   </section> -->
-  <section class="home_catalog width">
+  <section ref="home_catalog" class="home_catalog width">
 	<h2 class="title">MARMALADE CATALOG</h2>
     <p class="title_description">Here you will find only fresh and certified products from our production</p>
 	<div class="main_tovarMain">
@@ -1036,6 +1036,7 @@
         :price="el.price"
         :sale="el.sale"
         :weight="el.weight"
+		@ShowDetailed="ShowDetailed(el.name)"
         />
 		<svg class="additional" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve">
                     <path fill="#A55679" d="M485.36,366.64c0,3.22-0.09,6.42-0.24,9.61c-0.63,12.75-2.51,25.14-5.55,37.08
@@ -1257,6 +1258,24 @@
                     <path fill="#FBE2EF" d="M304.67,415.06c-11.09,2.17-40.41-3.14-65.11,14.47c-24.71,17.62-20.51,37.9-21.68,48.09
 	c-0.37,3.19-10.1-37.82,14.6-55.44C257.19,404.57,307.82,414.45,304.67,415.06z" />
 		</svg>
+	</div>
+  </section>
+  <section class="tovar_detal tovar_detal_close" ref="tovar_detal">
+	<div class="tovar_back" @click="ShowKatalog()">
+		<svg width="14.000000" height="8.000000" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<defs/>
+			<path id="Vector" d="M0.16 3.5L12.83 3.5M3.33 0.33L0.16 3.5L3.33 6.66" stroke="#A64574" stroke-opacity="0.690000" stroke-width="2.000000" stroke-linejoin="round"/>
+		</svg>
+		<p>Back to catalog</p>
+	</div>
+	<div class="detal_tovar">
+        <img class="detal_tovar_img" :src="this.$store.state.detailedItem.img" alt="noimg">
+        <div class="detal_tovar_infa">
+            <h6 class="detal_tovar_name">{{ this.$store.state.detailedItem.name }}</h6>
+            <p class="detal_tovar_price">{{ this.$store.state.detailedItem.price }} $</p>
+            <button class="detal_tovar_buy">Add to Basket</button>
+            <p class="detal_tovar_opi">{{ this.$store.state.detailedItem.opi }}</p>
+        </div>
 	</div>
   </section>
   <section class="social width">
@@ -1856,18 +1875,19 @@
 		<p class="quality_opi">Marmalade candies are a favorite treat for many children and adults. Bright candies with unusual flavors can be an excellent holiday gift. We offer our own products with delivery. The products have quality certificates.</p>
 	</div>
   </section>
-  
 </template>
 
 <script>
 
 import tovarMain from "../components/tovarMain.vue";
+//import tovarDetal from "../components/tovarDetal.vue";
 import axios from 'axios';
 
 export default({
   name: 'App',
   components: {
-    tovarMain
+    tovarMain,
+	//tovarDetal
   },
   data(){
     return{
@@ -1898,12 +1918,26 @@ export default({
     })
   },
   methods: {  
-
+	ShowDetailed(name){
+      this.$store.state.detailedItem = this.$store.state.katalog[this.$store.state.katalog.findIndex(a => a.name == name)];
+      this.$refs.tovar_detal.classList.remove('tovar_detal_close');
+      this.$refs.home_catalog.classList.add('home_catalog_close');
+    },
+	ShowKatalog(){
+      this.$refs.tovar_detal.classList.add('tovar_detal_close');
+      this.$refs.home_catalog.classList.remove('home_catalog_close');
+	}
   }
 })
 </script>
 
 <style lang="scss">
+.tovar_detal_close{
+	display: none;
+}
+.home_catalog_close{
+	display: none;
+}
 // .carousel__item {
 //   min-height: 432px;
 //   width: 742px;

@@ -1,5 +1,5 @@
 <template>
-  <section class="top_catalog">
+  <section class="top_catalog" ref="top_catalog">
     <div class="nav_hint">
       <a class="nav_hint_left">Home</a>
       <svg width="12.000000" height="13.000000" viewBox="0 0 12 13" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -153,7 +153,7 @@
       </div>
     </div>
   </section>
-  <section class="catalog">
+  <section class="catalog" ref="catalog">
     <div class="catalog_wrapper">
       <tovarKatalog class="tovarKatalog" v-for="el in filteredData" :key="el"
       :name="el.name"
@@ -163,9 +163,28 @@
       :weight="el.weight"
       :country="el.country"
       :not="el.not"
+      @ShowDetailed="ShowDetailed(el.name)"
       />
     </div>
     <button ref="but_more" class="but_more" @click="katalog_kolvo()">Show more</button>
+  </section>
+  <section class="tovar_detal tovar_detal_close" ref="tovar_detal">
+    <div class="tovar_back" @click="ShowKatalog()">
+      <svg width="14.000000" height="8.000000" viewBox="0 0 14 8" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs/>
+        <path id="Vector" d="M0.16 3.5L12.83 3.5M3.33 0.33L0.16 3.5L3.33 6.66" stroke="#A64574" stroke-opacity="0.690000" stroke-width="2.000000" stroke-linejoin="round"/>
+      </svg>
+      <p>Back to catalog</p>
+    </div>
+    <div class="detal_tovar">
+          <img class="detal_tovar_img" :src="this.$store.state.detailedItem.img" alt="noimg">
+          <div class="detal_tovar_infa">
+              <h6 class="detal_tovar_name">{{ this.$store.state.detailedItem.name }}</h6>
+              <p class="detal_tovar_price">{{ this.$store.state.detailedItem.price }} $</p>
+              <button class="detal_tovar_buy">Add to Basket</button>
+              <p class="detal_tovar_opi">{{ this.$store.state.detailedItem.opi }}</p>
+          </div>
+    </div>
   </section>
   <section class="social width">
 	<h2 class="title">OUR SOCIAL NETWORKS</h2>
@@ -847,6 +866,17 @@
           this.$refs.but_more.classList.add('but_more_close');
         }
       },
+      ShowDetailed(name){
+        this.$store.state.detailedItem = this.$store.state.katalog[this.$store.state.katalog.findIndex(a => a.name == name)];
+        this.$refs.tovar_detal.classList.remove('tovar_detal_close');
+        this.$refs.top_catalog.classList.add('top_catalog_close');
+        this.$refs.catalog.classList.add('catalog_close');
+      },
+      ShowKatalog(){
+        this.$refs.tovar_detal.classList.add('tovar_detal_close');
+        this.$refs.top_catalog.classList.remove('top_catalog_close');
+        this.$refs.catalog.classList.remove('catalog_close');
+      }
       // order(i){
       //   switch(i){
       //     case 1:{
@@ -894,6 +924,12 @@
 </script>
 
 <style lang="scss">
+  .top_catalog_close{
+    display: none;
+  }
+  .catalog_close{
+    display: none;
+  }
   .top_catalog{
     width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);
     margin: auto;

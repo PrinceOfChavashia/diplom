@@ -1273,7 +1273,7 @@
         <div class="detal_tovar_infa">
             <h6 class="detal_tovar_name">{{ this.$store.state.detailedItem.name }}</h6>
             <p class="detal_tovar_price">{{ this.$store.state.detailedItem.price }} $</p>
-            <button class="detal_tovar_buy">Add to Basket</button>
+            <button class="detal_tovar_buy" @click="add_katalog(this.$store.state.detailedItem)">Add to Basket</button>
             <p class="detal_tovar_opi">{{ this.$store.state.detailedItem.opi }}</p>
         </div>
 	</div>
@@ -1880,14 +1880,12 @@
 <script>
 
 import tovarMain from "../components/tovarMain.vue";
-//import tovarDetal from "../components/tovarDetal.vue";
 import axios from 'axios';
 
 export default({
   name: 'App',
   components: {
     tovarMain,
-	//tovarDetal
   },
   data(){
     return{
@@ -1926,12 +1924,23 @@ export default({
 	ShowKatalog(){
       this.$refs.tovar_detal.classList.add('tovar_detal_close');
       this.$refs.home_catalog.classList.remove('home_catalog_close');
-	}
+	},
+	add_katalog(item){
+      if(this.$store.state.korzina.findIndex((katalog) => katalog.name === item.name) === -1){
+        this.$store.state.korzina.push({...item})
+      }
+      else{
+        this.$store.state.korzina[this.$store.state.korzina.findIndex((katalog) => katalog.name === item.name)].sum++;
+      }
+	},
   }
 })
 </script>
 
 <style lang="scss">
+// .home_catalog{
+// 	//margin-top: -150px;
+// }
 .tovar_detal_close{
 	display: none;
 }

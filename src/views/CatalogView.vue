@@ -181,7 +181,7 @@
           <div class="detal_tovar_infa">
               <h6 class="detal_tovar_name">{{ this.$store.state.detailedItem.name }}</h6>
               <p class="detal_tovar_price">{{ this.$store.state.detailedItem.price }} $</p>
-              <button class="detal_tovar_buy">Add to Basket</button>
+              <button class="detal_tovar_buy" @click="add_katalog(this.$store.state.detailedItem)">Add to Basket</button>
               <p class="detal_tovar_opi">{{ this.$store.state.detailedItem.opi }}</p>
           </div>
     </div>
@@ -876,7 +876,15 @@
         this.$refs.tovar_detal.classList.add('tovar_detal_close');
         this.$refs.top_catalog.classList.remove('top_catalog_close');
         this.$refs.catalog.classList.remove('catalog_close');
-      }
+      },
+      add_katalog(item){
+        if(this.$store.state.korzina.findIndex((katalog) => katalog.name === item.name) === -1){
+          this.$store.state.korzina.push({...item})
+        }
+        else{
+          this.$store.state.korzina[this.$store.state.korzina.findIndex((katalog) => katalog.name === item.name)].sum++;
+        }
+      },
       // order(i){
       //   switch(i){
       //     case 1:{

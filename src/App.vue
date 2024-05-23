@@ -551,6 +551,89 @@
             </a>
         </div>
 	</section>
+	<section class="korsina_but" v-if="this.$store.state.korzina.length != 0">
+		<div class="korzina_svg" @click="korzinaAdd()">
+			<svg width="48.000000" height="54.000000" viewBox="0 0 48 54" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<defs>
+				<clipPath id="clip30_2">
+					<rect id="cart-heart-svgrepo-com (1) 1" width="48.000000" height="54.000000" fill="white" fill-opacity="0"/>
+				</clipPath>
+			</defs>
+			<rect id="cart-heart-svgrepo-com (1) 1" width="48.000000" height="54.000000" fill="#FFFFFF" fill-opacity="0"/>
+			<g clip-path="url(#clip30_2)">
+				<path id="Vector" d="M13.5 52.6L34.49 52.6C41.19 52.47 46.52 46.94 46.4 40.25L45 25.24C44.64 19.59 40.69 14.8 35.2 13.4C34.05 13.06 32.87 12.89 31.68 12.89L16.32 12.89C15.13 12.89 13.94 13.06 12.8 13.4C7.31 14.81 3.36 19.58 3 25.24L1.6 40.25C1.48 46.94 6.8 52.47 13.5 52.6Z" stroke="#A64574" stroke-opacity="1.000000" stroke-width="2.500000" stroke-linejoin="round"/>
+				<path id="Vector" d="M16.01 25.34C17.05 24.29 18.48 23.74 19.95 23.82C21.42 23.91 22.79 24.62 23.69 25.78C23.77 25.86 23.87 25.91 23.98 25.91C24.09 25.91 24.2 25.86 24.27 25.78C25.18 24.62 26.54 23.91 28.01 23.82C29.48 23.74 30.92 24.29 31.95 25.34C34.11 27.74 34.11 31.38 31.95 33.78L28.01 38.08C26.96 39.17 25.51 39.8 24 39.8C22.48 39.8 21.03 39.17 19.99 38.08L16.01 33.78C13.86 31.38 13.86 27.74 16.01 25.34Z" stroke="#A64574" stroke-opacity="1.000000" stroke-width="2.500000" stroke-linejoin="round"/>
+				<path id="Vector" d="M35.2 18.64L35.2 12.17C35.08 6.1 30.06 1.28 24 1.4C17.93 1.28 12.92 6.1 12.8 12.17L12.8 18.64" stroke="#A64574" stroke-opacity="1.000000" stroke-width="2.500000" stroke-linejoin="round" stroke-linecap="round"/>
+			</g>
+			</svg>
+			<div class="korzina_kolvo">
+				<p>{{ this.$store.state.korzina.length }}</p>
+			</div>
+		</div>
+    </section>
+	<section ref="korzina" class="korzina korzina_close" v-if="this.$store.state.korzina.length != 0">
+        <div>
+          <div class="modal-backdrop">
+            <a class="svg_close" @click="korzinaClose()">
+          <svg class="svg_close" width="100.000000" height="100.000000" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <clipPath id="clip75_517">
+              <rect id="cross-svgrepo-com 1" width="100.000000" height="100.000000" fill="white" fill-opacity="0" />
+            </clipPath>
+          </defs>
+          <rect id="cross-svgrepo-com 1" width="100.000000" height="100.000000" fill="#FFFFFF" fill-opacity="0" />
+          <g clip-path="url(#clip75_517)">
+            <path id="Vector" d="M27.87 67.87C26.7 69.05 26.7 70.94 27.87 72.12C29.04 73.29 30.95 73.29 32.12 72.12L27.87 67.87ZM52.12 52.12C53.29 50.94 53.29 49.05 52.12 47.87C50.94 46.7 49.05 46.7 47.87 47.87L52.12 52.12ZM47.87 47.87C46.7 49.05 46.7 50.94 47.87 52.12C49.05 53.29 50.94 53.29 52.12 52.12L47.87 47.87ZM72.12 32.12C73.29 30.94 73.29 29.05 72.12 27.87C70.94 26.7 69.05 26.7 67.87 27.87L72.12 32.12ZM52.12 47.87C50.94 46.7 49.05 46.7 47.87 47.87C46.7 49.05 46.7 50.94 47.87 52.12L52.12 47.87ZM67.87 72.12C69.05 73.29 70.94 73.29 72.12 72.12C73.29 70.94 73.29 69.05 72.12 67.87L67.87 72.12ZM47.87 52.12C49.05 53.29 50.94 53.29 52.12 52.12C53.29 50.94 53.29 49.05 52.12 47.87L47.87 52.12ZM32.12 27.87C30.95 26.7 29.04 26.7 27.87 27.87C26.7 29.05 26.7 30.94 27.87 32.12L32.12 27.87ZM32.12 72.12L52.12 52.12L47.87 47.87L27.87 67.87L32.12 72.12ZM52.12 52.12L72.12 32.12L67.87 27.87L47.87 47.87L52.12 52.12ZM47.87 52.12L67.87 72.12L72.12 67.87L52.12 47.87L47.87 52.12ZM52.12 47.87L32.12 27.87L27.87 32.12L47.87 52.12L52.12 47.87Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero" />
+          </g>
+          </svg>
+            </a>
+            <div class="modal">
+              <!-- <form method="get" class="login_form" @submit="submit_reg()"> -->
+				<div class="form_korzina">
+              <!-- <form method="get" class="form_korzina"> -->
+                <h3 class="taitel">BASKET</h3>
+				<div>
+					<div class="line"></div>
+					<div class="tovar_karzinas">
+						<tovarKarzina v-for="el in $store.state.korzina" :key="el"
+						:name="el.name"
+						:img="el.img"
+						:price="el.price"
+						:sale="el.sale"
+						:sum="el.sum"
+						:weight="el.weight"
+						@plys = "el.sum++"
+						@minus = "minus(el.name)"
+						@clear = "clear(el.name)"
+						/>
+					</div>
+					<div class="line"></div>
+				</div> 	
+					<p class="sum_pol">Sum: {{ reset }} $</p>
+					<div class="korzina_delivery">
+					<button class="korzina_but" @click="formalization()">Checkout</button>
+					</div>
+				</div>	
+                <!-- <input type="text" v-model="this.$store.state.form.name" name="name" placeholder="Login*" required />
+                <input type="email" v-model="this.$store.state.form.email" name="email" placeholder="Email*" required />
+                <input type="text" v-model="this.$store.state.form.telephon" name="telephon" placeholder="Phon*" required />
+                <input type="password" v-model="this.$store.state.form.password" name="password" placeholder="Password*" required />
+                <input type="password" v-model="this.$store.state.form.password_confirm" name="password_confirm" placeholder="Confirm password*" required />
+                <div class="box">
+              <input type="checkbox" class="checkbox-input" id="checkbox" value="true">
+              <label class="checkbox_text"  for="checkbox">
+                <span class="checkbox">
+                </span>
+                Agree to the <a href="#">terms of the agreement</a>
+              </label>
+                </div> -->
+                <!-- <div><input type="checkbox" v-model="this.$store.state.form.sogl" id="checkbox-rect1" name="sogl" required value="true">Agree to the <a href="#" class="reg_a">terms of the agreement</a></div> -->
+                <!-- <input type="submit" value="SIGNUP" class="login_but"> -->
+              <!-- </form> -->
+            </div>
+          </div>
+        </div>
+	</section>
     <router-view/>
 	<footer class="width">
 		<div class="footer_top">
@@ -848,21 +931,24 @@
 //import 'vue3-carousel/dist/carousel.css'
 
 import axios from 'axios';
-
+import tovarKarzina from "./components/tovarKarzina.vue";
 
 export default({
   name: 'app',
+  components: {
+    tovarKarzina,
+  },
   data(){
     return{
 	}
   },
   mounted() {
     axios.get(`http://diplom/php/katalog/`).then(response => {
-		this.store.state.katalog = response.data;
+		this.$store.state.katalog = response.data;
 		//console.log(this.store.state.katalog);
     })
 	axios.get(`http://diplom/php/main/`).then(response => {
-      this.store.state.main = response.data;
+      this.$store.state.main = response.data;
     })
 	//this.initialize();
   },
@@ -871,7 +957,45 @@ export default({
     //    this.store.state.user = JSON.parse(localStorage.getItem('user'))
     // //console.log(JSON.parse(localStorage.getItem('user')));
     // },
-  }
+	korzinaClose(){
+      this.$refs.korzina.classList.add('korzina_close');
+    },
+    korzinaAdd(){
+      this.$refs.korzina.classList.remove('korzina_close');
+    },
+	minus(name){
+      let el = this.$store.state.korzina.find(item => item.name == name)
+      if(el.sum != 1){el.sum--}
+    },
+    clear(name){
+		this.$store.state.korzina.splice(this.$store.state.korzina.findIndex((katalog) => katalog.name === name), 1) 
+    },
+	formalization(){
+      event.preventDefault();
+      let param = [{ user_id: this.$store.state.user.id }]
+      console.log(this.$store.state.user);
+      param.push(this.$store.state.korzina)
+      //console.log("hyohyohyohyohyohyohyo");
+      axios.post(`http://diplom/php/formalization/formalization.php`, param)
+      .then(response =>{
+        alert(response.data)
+		//console.log("покупка совершена))))");
+        //console.log(response.data);
+      }).catch(function(error){
+        alert(error)
+      })
+    },
+},
+	computed:{
+		reset(){
+			let amount = 0;
+			this.$store.state.korzina.forEach((el) =>
+			{
+				amount += el.sum * el.price
+			})
+			return amount;
+		},
+	}
 })
 </script>
 
@@ -922,6 +1046,8 @@ body{
   padding-top: 26px;
 }
 .header{
+  position: sticky;
+  top: 26px;
   padding: 0 12px;
   margin: auto;
   display: flex;
@@ -967,6 +1093,109 @@ body{
 }
 .burger{
 	display: none;
+}
+.korsina_but{
+	position: sticky;
+	top: 100px;
+	display: flex;
+	justify-content: flex-end;
+	width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);
+	margin: auto;
+	margin-bottom: -80px;
+	
+	.korzina_svg{
+		box-shadow: 0px 0px 10px 5px rgba(166, 69, 116, 0.2);
+		border-radius: 50%;
+		padding: 13px 16px;
+		background: #fff;
+
+		.korzina_kolvo{
+			position: absolute;
+			bottom: 0px;
+			right: 0px;
+			background: #81A645;
+			height: 25px;
+			width: 25px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			//padding: 3px 7px;
+			border-radius: 50%;
+		}
+	}
+}
+.korzina_close{
+	display: none;
+}
+.korzina{
+	.modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(166, 69, 116, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .svg_close{
+      align-self: flex-end;
+      position: relative;
+      right: 150px;
+    }
+    .modal {
+      z-index: 10000;
+      position: sticky;
+      overflow-x: auto;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      background: #FFD4E9;
+      padding: 25px 20px 20px;
+      width: 590px;
+
+		.form_korzina{
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+			.taitel{
+				font-size: 32px;
+				color: #A64574;
+			}
+			.line{
+				height: 3px;
+				background-color: #A64574;
+			}
+			.line:first-child{
+				margin-bottom: 10px;
+			}
+			.line:last-child{
+				margin-top: 10px;
+			}
+			.tovar_karzinas{
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+			}
+			.sum_pol{
+				font-size: 20px;
+				text-align: right;
+				color: #A64574;
+				margin-top: 15px;
+			}
+			.korzina_but{
+				background-color: #81A645;
+				color: #FFD4E9;
+				border-radius: 10px;
+				width: 100%;
+				height: 50px;
+				font-size: 32px;
+			}
+		}
+		}
+	}
 }
 .title{
 	font-size: 36px;

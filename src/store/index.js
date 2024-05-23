@@ -8,6 +8,7 @@ export default createStore({
     katalog_unsort: [], 
     main: [],
     tagi: [],
+    korzina: [],
     form: {
       name: '',
       email: '',

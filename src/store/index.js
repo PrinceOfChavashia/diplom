@@ -9,6 +9,7 @@ export default createStore({
     main: [],
     tagi: [],
     korzina: [],
+    orders: [],
     form: {
       name: '',
       email: '',

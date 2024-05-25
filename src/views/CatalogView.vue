@@ -181,7 +181,8 @@
           <div class="detal_tovar_infa">
               <h6 class="detal_tovar_name">{{ this.$store.state.detailedItem.name }}</h6>
               <p class="detal_tovar_price">{{ this.$store.state.detailedItem.price }} $</p>
-              <button class="detal_tovar_buy" @click="add_katalog(this.$store.state.detailedItem)">Add to Basket</button>
+              <button class="detal_tovar_buy" v-if="this.$store.state.user != null" @click="add_katalog(this.$store.state.detailedItem)">Add to Basket</button>
+              <button class="detal_tovar_buy" v-if="this.$store.state.user == null" @click="login()">Log in</button>
               <p class="detal_tovar_opi">{{ this.$store.state.detailedItem.opi }}</p>
           </div>
     </div>
@@ -491,11 +492,94 @@
 		<p class="quality_opi">Marmalade candies are a favorite treat for many children and adults. Bright candies with unusual flavors can be an excellent holiday gift. We offer our own products with delivery. The products have quality certificates.</p>
 	</div>
   </section>
+  <section ref="login" class="login login_close">
+    <div>
+    <!-- <div class="registration" v-show="this.$store.state.register"> -->
+      <div class="modal-backdrop">
+        <a class="svg_close" @click="login_close()">
+          <svg class="svg_close" width="100.000000" height="100.000000" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <clipPath id="clip75_517">
+              <rect id="cross-svgrepo-com 1" width="100.000000" height="100.000000" fill="white" fill-opacity="0" />
+            </clipPath>
+          </defs>
+          <rect id="cross-svgrepo-com 1" width="100.000000" height="100.000000" fill="#FFFFFF" fill-opacity="0" />
+          <g clip-path="url(#clip75_517)">
+            <path id="Vector" d="M27.87 67.87C26.7 69.05 26.7 70.94 27.87 72.12C29.04 73.29 30.95 73.29 32.12 72.12L27.87 67.87ZM52.12 52.12C53.29 50.94 53.29 49.05 52.12 47.87C50.94 46.7 49.05 46.7 47.87 47.87L52.12 52.12ZM47.87 47.87C46.7 49.05 46.7 50.94 47.87 52.12C49.05 53.29 50.94 53.29 52.12 52.12L47.87 47.87ZM72.12 32.12C73.29 30.94 73.29 29.05 72.12 27.87C70.94 26.7 69.05 26.7 67.87 27.87L72.12 32.12ZM52.12 47.87C50.94 46.7 49.05 46.7 47.87 47.87C46.7 49.05 46.7 50.94 47.87 52.12L52.12 47.87ZM67.87 72.12C69.05 73.29 70.94 73.29 72.12 72.12C73.29 70.94 73.29 69.05 72.12 67.87L67.87 72.12ZM47.87 52.12C49.05 53.29 50.94 53.29 52.12 52.12C53.29 50.94 53.29 49.05 52.12 47.87L47.87 52.12ZM32.12 27.87C30.95 26.7 29.04 26.7 27.87 27.87C26.7 29.05 26.7 30.94 27.87 32.12L32.12 27.87ZM32.12 72.12L52.12 52.12L47.87 47.87L27.87 67.87L32.12 72.12ZM52.12 52.12L72.12 32.12L67.87 27.87L47.87 47.87L52.12 52.12ZM47.87 52.12L67.87 72.12L72.12 67.87L52.12 47.87L47.87 52.12ZM52.12 47.87L32.12 27.87L27.87 32.12L47.87 52.12L52.12 47.87Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero" />
+          </g>
+          </svg>
+        </a>
+        <div class="modal">
+          <!-- <form method="get" class="login_form" @submit="submit_reg()"> -->
+          <form method="get" class="form_register" @submit="this.submit_log()">
+            <h3 class="taitel">SIGN IN</h3>
+            <input type="text" v-model="this.$store.state.form.name" name="name" placeholder="Login*" required />
+            <input type="password" v-model="this.$store.state.form.password" name="password" placeholder="Password*" required />
+            <div class="form_but">
+              <button class="form_but_up" @click="registrationAdd()">Signup</button>
+            </div>
+            <!-- <div class="box">
+              <input type="checkbox" class="checkbox-input" id="checkbox" value="true">
+              <label class="checkbox_text"  for="checkbox">
+                <span class="checkbox">
+                </span>
+                Agree to the <a href="#">terms of the agreement</a>
+              </label>
+            </div> -->
+            <!-- <div><input type="checkbox" v-model="this.$store.state.form.sogl" id="checkbox-rect1" name="sogl" required value="true">Agree to the <a href="#" class="reg_a">terms of the agreement</a></div> -->
+            <input type="submit" value="SIGN IN" class="login_but">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section ref="registration" class="registration registration_close">
+    <div>
+    <!-- <div class="registration" v-show="this.$store.state.register"> -->
+      <div class="modal-backdrop">
+        <a class="svg_close" @click="registrationClose()">
+          <svg class="svg_close" width="100.000000" height="100.000000" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+          <defs>
+            <clipPath id="clip75_517">
+              <rect id="cross-svgrepo-com 1" width="100.000000" height="100.000000" fill="white" fill-opacity="0" />
+            </clipPath>
+          </defs>
+          <rect id="cross-svgrepo-com 1" width="100.000000" height="100.000000" fill="#FFFFFF" fill-opacity="0" />
+          <g clip-path="url(#clip75_517)">
+            <path id="Vector" d="M27.87 67.87C26.7 69.05 26.7 70.94 27.87 72.12C29.04 73.29 30.95 73.29 32.12 72.12L27.87 67.87ZM52.12 52.12C53.29 50.94 53.29 49.05 52.12 47.87C50.94 46.7 49.05 46.7 47.87 47.87L52.12 52.12ZM47.87 47.87C46.7 49.05 46.7 50.94 47.87 52.12C49.05 53.29 50.94 53.29 52.12 52.12L47.87 47.87ZM72.12 32.12C73.29 30.94 73.29 29.05 72.12 27.87C70.94 26.7 69.05 26.7 67.87 27.87L72.12 32.12ZM52.12 47.87C50.94 46.7 49.05 46.7 47.87 47.87C46.7 49.05 46.7 50.94 47.87 52.12L52.12 47.87ZM67.87 72.12C69.05 73.29 70.94 73.29 72.12 72.12C73.29 70.94 73.29 69.05 72.12 67.87L67.87 72.12ZM47.87 52.12C49.05 53.29 50.94 53.29 52.12 52.12C53.29 50.94 53.29 49.05 52.12 47.87L47.87 52.12ZM32.12 27.87C30.95 26.7 29.04 26.7 27.87 27.87C26.7 29.05 26.7 30.94 27.87 32.12L32.12 27.87ZM32.12 72.12L52.12 52.12L47.87 47.87L27.87 67.87L32.12 72.12ZM52.12 52.12L72.12 32.12L67.87 27.87L47.87 47.87L52.12 52.12ZM47.87 52.12L67.87 72.12L72.12 67.87L52.12 47.87L47.87 52.12ZM52.12 47.87L32.12 27.87L27.87 32.12L47.87 52.12L52.12 47.87Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero" />
+          </g>
+          </svg>
+        </a>
+        <div class="modal">
+          <!-- <form method="get" class="login_form" @submit="submit_reg()"> -->
+          <form method="get" class="form_register" @submit="this.submit_reg()">
+            <h3 class="taitel">SIGNUP</h3>
+            <input type="text" v-model="this.$store.state.form.name" name="name" placeholder="Login*" required />
+            <input type="email" v-model="this.$store.state.form.email" name="email" placeholder="Email*" required />
+            <input type="text" v-model="this.$store.state.form.telephon" name="telephon" placeholder="Phon*" required />
+            <input type="password" v-model="this.$store.state.form.password" name="password" placeholder="Password*" required />
+            <input type="password" v-model="this.$store.state.form.password_confirm" name="password_confirm" placeholder="Confirm password*" required />
+            <div class="box">
+              <input type="checkbox" class="checkbox-input" id="checkbox" value="true">
+              <label class="checkbox_text"  for="checkbox">
+                <span class="checkbox">
+                </span>
+                Agree to the <a href="#">terms of the agreement</a>
+              </label>
+            </div>
+            <!-- <div><input type="checkbox" v-model="this.$store.state.form.sogl" id="checkbox-rect1" name="sogl" required value="true">Agree to the <a href="#" class="reg_a">terms of the agreement</a></div> -->
+            <input type="submit" value="SIGNUP" class="login_but">
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
   import tovarKatalog from "../components/tovarKatalog.vue";
   import tagSelect from "../components/tagSelect.vue";
+  import axios from 'axios';
   export default {
     components: {
       tagSelect,
@@ -505,7 +589,9 @@
       return {
       }
     },
-
+    mounted() {
+      this.initialize();
+    },
     methods: {
       active_green(i){
         switch(i){
@@ -884,6 +970,69 @@
         else{
           this.$store.state.korzina[this.$store.state.korzina.findIndex((katalog) => katalog.name === item.name)].sum++;
         }
+      },
+      login(){
+		this.$refs.login.classList.remove('login_close');
+        //this.$refs.registration.classList.remove('registration_close');
+      },
+      login_close(){
+		this.$refs.login.classList.add('login_close');
+      },
+      submit_log(){
+        event.preventDefault();
+        let param = "name="+this.$store.state.form.name+"&password="+this.$store.state.form.password
+        
+        axios.get(`http://diplom/php/post_log/?`+param)
+        .then(response => {
+          if(response.data != "Проверьте правильность заполнения данных"){
+          this.$store.state.user = response.data
+          //console.log(this.$store.state.user);
+          localStorage.setItem('user', JSON.stringify(this.$store.state.user))
+          this.$store.state.log = false;
+          this.$refs.login.classList.add('login_close');
+          // console.log(this.$store.state.log);
+          // console.log("this.$store.state.log");
+          //console.log(this.$store.state.user);
+          }
+          else{
+            alert("Проверьте правильность заполнения данных")
+          }
+        })
+        .catch(function(error){
+          alert(error)
+        })
+        //console.log(this.user);
+      },
+      submit_reg(){
+        event.preventDefault();
+        let param = "name="+this.$store.state.form.name+"&email="+this.$store.state.form.email+"&telephon="+this.$store.state.form.telephon+"&password="+this.$store.state.form.password+"&password_confirm="+this.$store.state.form.password_confirm+"&sogl="+this.$store.state.form.sogl;
+        //console.log(param);
+        //let esek = false;
+        axios.get(`http://diplom/php/post_reg/?`+param)
+        .then(function(response){
+          alert(response.data);
+          //this.$refs.registration.classList.add('registration_close')
+          //  this.registrationClose();
+        }).catch(function(error){
+          alert(error)
+        })
+        this.registrationClose();
+        // if(esek == true){
+        //   console.log("sdvdvsvsvdsdvsdsdvsddvs");
+        //   this.registrationClose();
+        // }
+      },
+      registrationClose(){
+        this.$refs.registration.classList.add('registration_close');
+        this.$refs.login.classList.remove('login_close');
+      },
+      registrationAdd(){
+        this.$refs.login.classList.add('login_close');
+        this.$refs.registration.classList.remove('registration_close');
+      },
+      initialize(){
+        this.$store.state.user = JSON.parse(localStorage.getItem('user'))
+        //console.log(JSON.parse(localStorage.getItem('user')));
       },
       // order(i){
       //   switch(i){

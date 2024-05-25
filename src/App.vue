@@ -973,14 +973,12 @@ export default({
 	formalization(){
       event.preventDefault();
       let param = [{ user_id: this.$store.state.user.id }]
-      console.log(this.$store.state.user);
-      param.push(this.$store.state.korzina)
-      //console.log("hyohyohyohyohyohyohyo");
+      // eslint-disable-next-line no-unused-vars
+      let result = this.$store.state.korzina.map(({tagi,type,...rest}) => ({...rest}));
+      param.push(result);
       axios.post(`http://diplom/php/formalization/formalization.php`, param)
       .then(response =>{
         alert(response.data)
-		//console.log("покупка совершена))))");
-        //console.log(response.data);
       }).catch(function(error){
         alert(error)
       })
@@ -1312,6 +1310,136 @@ footer{
 		padding: 16px 40px;
 	}
 }
+.login_close{
+    display: none;
+  }
+  .registration_close{
+    display: none;
+  }
+  .modal-backdrop {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(166, 69, 116, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .svg_close{
+      align-self: flex-end;
+      position: relative;
+      right: 150px;
+    }
+    .modal {
+      z-index: 10000;
+      position: sticky;
+      //margin-top: 50px;
+      overflow-x: auto;
+      display: flex;
+      flex-direction: column;
+      border-radius: 10px;
+      background: #FFD4E9;
+      padding: 25px 20px 20px;
+      width: 310px;
+      /* height: 400px; */
+
+      .form_register{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .taitel{
+          font-size: 28px;
+          color: #A64574;
+        }
+        input[type="email"], input[type="password"], input[type="text"]{
+          color: rgba(166, 69, 116, 0.69);
+          font-size: 16px;
+          border-radius: 10px;
+          background: rgba(166, 69, 116, 0.05);
+          height: 40px;
+          align-items: stretch;
+          padding: 10px 12px;
+        }
+        // input[type="checkbox"]{
+        //   width: 15px;
+        //   height: 15px;
+        // }
+        ::-webkit-input-placeholder{
+          color: rgba(166, 69, 116, 0.69);
+        }
+        .form_but{
+          margin-top: 10px;
+          margin-bottom: 10px;
+          .form_but_up{
+            background-color: rgba(166, 69, 116, 0);
+            color: #81A645;
+          }
+        }
+        .login_but{
+          background-color: #81A645;
+          color: #fff;
+          font-size: 28px;
+          padding: 5px;
+          border-radius: 10px;
+        }
+        .box {
+          //width: 100%;
+          //height: 90vh;
+          display: flex;
+          //flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: left;
+          align-items: center;
+          //align-content: center;
+
+          .checkbox_text{
+            color: #A64574;
+            display: flex;
+            align-items: center;
+            gap: 7px;
+
+            a{
+              color: #81A645;
+            }
+          }
+        }
+        .checkbox-input {
+          display: none;
+          &:checked + label .checkbox {
+            &:after {
+              transform: translate(-50%, -50%) scale(1);
+            }
+          }
+        }
+        .checkbox {
+          border: 1px solid #A64574;
+          border-radius: 3px;
+          width: 16px;
+          height: 16px;
+          display: inline-block;
+          position: relative;
+        
+          &:after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            width: 12px;
+            height: 12px;
+            background-color: #A64574;
+            border-radius: 2px;
+            transition: 0.3s;
+          }
+        }
+      }
+    }
+  }
 @media screen and (max-width: 950px){
 	.base{
 		display: none;

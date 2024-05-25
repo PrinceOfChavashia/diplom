@@ -1,4 +1,47 @@
 <template>
+  <section class="twits width" v-if="this.$store.state.user != null">
+    <div class="twits_left">
+      <div v-for="(i, index) in this.$store.state.orders" :key="i" class="orders_user">
+        <p class="orders_user_text">IT WAS YOURS <span class="orders_user_span">{{ this.$store.state.orders.length-index }}</span> ORDERS :-)</p>
+        <p class="card_sum">This purchase was on: <span class="card_sum_span">{{ order_sum(i) }}</span> $</p>
+        <ordersUser class="orders_user_order"
+          :arr = i          
+        />
+      </div>
+    </div>
+    <div class="twits_flex">
+      <div class="order_1">
+        <div class="twits_right">
+          <div class="twits_user">
+            <h3 class="twits_user_zag">Exclusively personal information</h3>
+            <div class="twits_user_inf">
+              <p class="twits_user_inf_left">Name: </p>
+              <p class="twits_user_inf_right">{{ this.$store.state.user.name }}</p>
+            </div>
+            <div class="twits_user_inf">
+              <p class="twits_user_inf_left">Email: </p>
+              <p class="twits_user_inf_right">{{ this.$store.state.user.email }}</p>
+            </div>
+            <div class="twits_user_inf">
+              <p class="twits_user_inf_left">Phon: </p>
+              <p class="twits_user_inf_right">{{ this.$store.state.user.telephon }}</p>
+            </div>
+          </div>
+          <div class="twits_orders twits_user">
+            <h3 class="twits_user_zag">Information on orders</h3>
+            <div class="twits_user_inf">
+              <p class="twits_user_inf_left">The amount of the ransom: </p>
+              <p class="twits_user_inf_right"><span class="twits_orders_span">{{ orders_sum }}</span> $</p>
+            </div>
+            <div class="twits_user_inf">
+              <p class="twits_user_inf_left">The number of orders: </p>
+              <p class="twits_user_inf_right"><span class="twits_orders_span">{{ this.$store.state.orders.length }}</span></p>
+            </div>
+          </div>
+        </div>  
+      </div>
+    </div>
+  </section>
   <section ref="login" class="login" v-if="this.$store.state.user == null">
     <div>
     <!-- <div class="registration" v-show="this.$store.state.register"> -->
@@ -391,8 +434,12 @@
 </template>
 
 <script>
+  import ordersUser from "../components/ordersUser.vue";
   import axios from 'axios';
   export default {
+    components: {
+      ordersUser,
+    },
     data() {
       return {
       }
@@ -400,8 +447,30 @@
     mounted() {
       this.initialize();
       //this.log();
+      this.orders();
     },
     methods: {
+      orders(){
+        //console.log('1111111111111111111111111');
+        if(this.$store.state.user != null){
+          //console.log('2222222222222222222222222');
+          //event.preventDefault();
+          let param = "asdasd="+this.$store.state.user.id;
+          let i = [];
+          this.$store.state.orders = [];
+          
+          axios.get(`http://diplom/php/ordersssssss/index.php/?`+param)
+          .then(response => {
+            i = response.data
+            i.forEach(item => {
+              this.$store.state.orders.push(item[0])
+            })
+          }).catch(function(error){
+            alert(error)
+          })
+          //console.log(this.$store.state.orders);
+        }
+      },
       submit_log(){
         event.preventDefault();
         let param = "name="+this.$store.state.form.name+"&password="+this.$store.state.form.password
@@ -425,12 +494,12 @@
         .catch(function(error){
           alert(error)
         })
-        console.log(this.user);
+        //console.log(this.user);
       },
       submit_reg(){
         event.preventDefault();
         let param = "name="+this.$store.state.form.name+"&email="+this.$store.state.form.email+"&telephon="+this.$store.state.form.telephon+"&password="+this.$store.state.form.password+"&password_confirm="+this.$store.state.form.password_confirm+"&sogl="+this.$store.state.form.sogl;
-        console.log(param);
+        //console.log(param);
         //let esek = false;
         axios.get(`http://diplom/php/post_reg/?`+param)
         .then(function(response){
@@ -456,13 +525,97 @@
       },
       initialize(){
         this.$store.state.user = JSON.parse(localStorage.getItem('user'))
-        console.log(JSON.parse(localStorage.getItem('user')));
+        //console.log(JSON.parse(localStorage.getItem('user')));
+      },
+      order_sum(el)
+      {
+        let amount = 0;
+        el.forEach((elem) =>
+        {
+          amount += elem.sum * elem.price
+        })
+        return amount;
+      },
+    },
+    computed:
+    {
+      orders_sum()
+      {
+        let amount = 0;
+        this.$store.state.orders.forEach((el) => {
+          el.forEach((elem) => {
+            amount += elem.sum * elem.price
+          })
+        })
+        return amount;
       },
     },
   }
 </script>
 
 <style lang="scss">
+  .twits{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+
+    .twits_left{
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      gap: 30px;
+      width: 100%;
+      color: #A64574;
+
+      .orders_user{
+        border-radius: 10px;
+        border: #A64574 solid 3px;
+        padding: 30px;
+
+        .orders_user_text{
+          font-size: 24px;
+          margin-bottom: 6px;
+        }
+        .card_sum{
+          font-size: 16px;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .order_1{
+      position: sticky;
+      top: 100px;
+    }
+    .twits_right{
+      display: flex;
+      flex-direction: column;
+      width: 431px;
+      gap: 20px;
+
+      .twits_user{
+        border: #A64574 solid 3px;
+        border-radius: 10px;
+        color: #A64574;
+        padding: 12px 10px;
+
+        .twits_user_zag{
+          font-size: 24px;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+        .twits_user_inf{
+          display: flex;
+          justify-content: space-between;
+        }
+        .twits_user_inf{
+          margin-bottom: 12px;
+        }
+        .twits_user_inf:last-child{
+          margin-bottom: 0px;
+        }
+      }
+    }
+  }
   .login_close{
     display: none;
   }

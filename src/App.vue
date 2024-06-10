@@ -231,7 +231,7 @@
             <a><router-link to="/contacts">CONTACTS</router-link></a>
         </nav>
         <div class="links">
-            <a class="link telegram">
+            <a class="link telegram" href="https://t.me/Prince_of_Chavashia">
                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                         <clipPath id="clip26_130">
@@ -244,7 +244,7 @@
                     </g>
                 </svg>
             </a>
-            <a class="link tiktok">
+            <a class="link tiktok" href="https://www.tiktok.com/search?q=gym&t=1715772932477">
                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                         <clipPath id="clip26_128">
@@ -257,7 +257,7 @@
                     </g>
                 </svg>
             </a>
-            <a class="link vk">
+            <a class="link vk" href="https://vk.com/id376932635">
                 <svg fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                     <defs>
                         <clipPath id="clip26_126">
@@ -639,7 +639,9 @@
 		<div class="footer_top">
 			<div class="footer_top_x footer_top_1">
 				<h6 class="main_zag_foot">MARMALAND</h6>
-				<svg class="" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve">
+				<a class="text_foot_1 text_foot" href="#">+7  (960) 400 - 21 - 40</a>
+				<a class="text_foot_1 text_foot" href="#">kalausindaniil888@gmail.com</a>
+				<svg class="footer_svg" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve">
                     <path fill="#A55679" d="M485.36,366.64c0,3.22-0.09,6.42-0.24,9.61c-0.63,12.75-2.51,25.14-5.55,37.08
 	c-7.23,28.69-20.93,54.76-39.53,76.59c-7.79,9.2-16.48,17.65-25.89,25.23c-32.61,26.22-74.08,41.92-119.22,41.92
 	c-37.14,0-71.81-10.63-101.1-29.02c-6.3-3.97-12.36-8.27-18.12-12.9c-40.04-32.22-66.79-80.26-70.7-134.63
@@ -874,9 +876,9 @@
 			<div class="footer_top_x footer_top_4">
 				<h6 class="zag_foot">CONTACTS / SOCIAL NETWORKS</h6>
 				<a class="text_foot" href="#">+7  (960) 400 - 21 - 40</a>
-				<a class="text_foot" href="#">kalausindaniil888@gmail.com</a>
+				<a class="text_foot" href="mailto: kalausindaniil@gmail.com">kalausindaniil888@gmail.com</a>
 				<div class="footer_links">
-					<a class="link telegram">
+					<a class="link telegram" href="https://t.me/Prince_of_Chavashia">
 						<svg fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 			<defs>
 				<clipPath id="clip26_130">
@@ -889,7 +891,7 @@
 			</g>
 						</svg>
 					</a>
-					<a class="link tiktok">
+					<a class="link tiktok" href="https://www.tiktok.com/search?q=gym&t=1715772932477">
 						<svg fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 			<defs>
 				<clipPath id="clip26_128">
@@ -902,7 +904,7 @@
 			</g>
 						</svg>
 					</a>
-					<a class="link vk">
+					<a class="link vk" href="https://vk.com/id376932635">
 						<svg fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 			<defs>
 				<clipPath id="clip26_126">
@@ -945,7 +947,6 @@ export default({
   mounted() {
     axios.get(`http://diplom/php/katalog/`).then(response => {
 		this.$store.state.katalog = response.data;
-		//console.log(this.store.state.katalog);
     })
 	axios.get(`http://diplom/php/main/`).then(response => {
       this.$store.state.main = response.data;
@@ -1057,6 +1058,7 @@ body{
   width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);
   font-size: 16px;
   color: #FFD4E9;
+  z-index: 1000000;
 
   .logo{
     width: 105px;
@@ -1100,6 +1102,7 @@ body{
 	width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);
 	margin: auto;
 	margin-bottom: -80px;
+	z-index: 999999;
 	
 	.korzina_svg{
 		box-shadow: 0px 0px 10px 5px rgba(166, 69, 116, 0.2);
@@ -1128,6 +1131,7 @@ body{
 .korzina{
 	.modal-backdrop {
     position: fixed;
+	z-index: 999999999;
     top: 0;
     bottom: 0;
     left: 0;
@@ -1267,6 +1271,9 @@ footer{
 		.footer_top_x {
 			display: flex;
 			flex-direction: column;
+			.text_foot_1{
+				display: none;
+			}
 			.main_zag_foot{
 				font-size: 20px;
 			}
@@ -1440,7 +1447,203 @@ footer{
       }
     }
   }
+.tovar_back.tovar_back.tovar_back.tovar_back{
+	//background-color: #A64574;
+	height: 473px;
+}
+.carousel_phon{
+	display: none;
+}
+  @media screen and (max-width: 1436px){
+	.social_sard.social_sard.social_sard.social_sard, .delivery_card.delivery_card.delivery_card.delivery_card{
+		width: 330px;
+	}
+	.tovar_back.tovar_back.tovar_back.tovar_back{
+		width: 250px;
+	}
+	.carousel_phon{
+		display: block;
+		.carousel__item{
+			width: 100%;
+		}
+	}
+	.carousel_desk{
+		display: none;
+	}
+    }
+	@media screen and (max-width: 1245px){
+		.tovar_detal{
+			margin-top: 0;
+			display: flex;
+			flex-direction: column;
+		}
+		.tovar_back.tovar_back.tovar_back.tovar_back{
+			align-items: center;
+			height: 60px;
+			width: 100%;
+		}
+		.detal_tovar{
+			margin-top: 60px;
+		}
+		.twits.twits.twits.twits{
+			gap: 10px;
+		}
+		.twits_right.twits_right.twits_right.twits_right{
+			width: 300px;
+			gap: 10px;
+		}
+		.svg_close.svg_close.svg_close.svg_close.svg_close.svg_close{
+			right: 100px;
+		}
+    }
+    @media screen and (max-width: 1220px){
+		.social_sard.social_sard.social_sard.social_sard, .delivery_card.delivery_card.delivery_card.delivery_card{
+		width: 430px;
+	}
+    }
+    @media screen and (max-width: 1046px){
+		.anchors.anchors.anchors.anchors{
+			margin-top: 10px;
+		}
+		.nav_hint.nav_hint.nav_hint.nav_hint{
+			margin-bottom: 15px;
+		}
+		.svg_close.svg_close.svg_close.svg_close.svg_close.svg_close{
+			right: 30px;
+		}
+		.social_sard.social_sard.social_sard.social_sard, .delivery_card.delivery_card.delivery_card.delivery_card{
+		width: 380px;
+	}
+	.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img{
+		width: 300px;
+		height: 350px;
+	}
+	.twits_left.twits_left.twits_left.twits_left{
+		gap: 15px;
+		.orders_user.orders_user.orders_user.orders_user{
+			padding: 15px;
+		}
+	}
+    }
+    @media screen and (max-width: 916px){
+		.social_sard.social_sard.social_sard.social_sard, .delivery_card.delivery_card.delivery_card.delivery_card{
+		width: 330px;
+	}
+		.title_description{
+			margin-bottom: 20px;
+		}
+		.carousel_phon{
+			display: block;
+			.carousel__item.carousel__item.carousel__item{
+				width: 100%;
+				height: 200px;
+
+				.carousel_active_text{
+					padding-bottom: 20px;
+					padding-left: 10px;
+					padding-right: 10px;
+					.carousel_text{
+						font-size: 20px;
+					}
+					.carousel_but{
+						font-size: 14px;
+						background-color: #A64574;
+						border-radius: 20px;
+						padding: 6px 19px;
+						color: #fff;
+					}
+				}
+			}
+			.carousel_pagg{
+				position: absolute;
+				bottom: 5px;
+				width: 120px;
+				z-index: 1;
+				margin: auto;
+				left: 0;
+				right: 0;
+				text-align: center;
+			}
+		}
+    }
+    @media screen and (max-width: 788px){
+		.social_sard.social_sard.social_sard.social_sard, .delivery_card.delivery_card.delivery_card.delivery_card{
+		width: 300px;
+	}
+    }
+    @media screen and (max-width: 710px){
+		.social_sard.social_sard.social_sard.social_sard, .delivery_card.delivery_card.delivery_card.delivery_card{
+		width: 250px;
+		}
+		.delivery_card_name.delivery_card_name.delivery_card_name.delivery_card_name{
+			font-size: 20px;
+		}
+    }
+    @media screen and (max-width: 581px){
+		.social_sard.social_sard.social_sard.social_sard, .delivery_card.delivery_card.delivery_card.delivery_card{
+		width: 100%;
+	}
+	.delivery_card_name.delivery_card_name.delivery_card_name.delivery_card_name{
+			font-size: 24px;
+		}
+		.main_tovarMain.main_tovarMain.main_tovarMain.main_tovarMain{
+		row-gap: 15px;
+	}
+	.catalog_wrapper.catalog_wrapper.catalog_wrapper.catalog_wrapper{
+		row-gap: 15px;
+	}
+	.svg_close.svg_close.svg_close.svg_close.svg_close.svg_close{
+			right: 0px;
+		}
+    }
+	@media screen and (max-width: 506px){
+		.title{
+			font-size: 25px;
+		}
+		// .title_description{
+		// 	font-size: 14px;
+		// 	margin-bottom: 20px;
+		// }
+    }
+  @media screen and (max-width: 1010px){
+	.footer_top_2.footer_top_2.footer_top_2{
+		display: none;
+	}
+	.footer_svg{
+		height: 150px;
+		//background-color: #81A645;
+	}
+  }
+  @media screen and (max-width: 790px){
+	.footer_top_3.footer_top_3.footer_top_3{
+		display: none;
+	}
+  }
+  @media screen and (max-width: 565px){
+	.footer_top_4.footer_top_4.footer_top_4{
+		display: none;
+	}
+	.footer_top{
+		flex-direction: column-reverse;
+	}
+	.text_foot_1.text_foot_1.text_foot_1.text_foot_1{
+		display: inline-block;
+	}
+	.footer_top_1{
+		align-items: center;
+	}
+	.footer_svg{
+		height: 100px;
+	}
+  }
 @media screen and (max-width: 950px){
+	.detal_tovar.detal_tovar.detal_tovar.detal_tovar{
+		gap: 10px;
+		.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa{
+			gap: 10px;
+			width: 400px;
+		}
+	}
 	.base{
 		display: none;
 	}
@@ -1519,5 +1722,125 @@ footer{
 		}
 	}
 }
+@media screen and (max-width: 853px){
+	.detal_tovar.detal_tovar.detal_tovar.detal_tovar{
+		flex-direction: column;
+		align-items: center;
+		.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img{
+			width: 500px;
+			height: 600px;
+		}
+		.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa{
+			width: 500px;
+		}
+	}
+}
+@media screen and (max-width: 565px){
+	.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img.detal_tovar_img{
+		width: 300px;
+		height: 300px;
+	}
+	.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa.detal_tovar_infa{
+		width: 300px;
+	}
+}
+@media screen and (max-width: 726px){
+	.top_catalog.top_catalog.top_catalog.top_catalog{
+		margin-top: 15px;
+		.nav_hint.nav_hint.nav_hint.nav_hint{
+			margin-bottom: 15px;
+		}
+		.fil_type.fil_type.fil_type.fil_type{
+			margin-top: 15px;
+			margin-bottom: 15px;
+			font-size: 20px;
+			gap: 15px;
+		}
+		.sort.sort.sort.sort{
+			flex-direction: column;
+			row-gap: 25px;
+		}
+		.select.select.select.select{
+			margin-bottom: -10px;
+		}
+	}
+}
+@media screen and (max-width: 669px){
+	.question.question.question.question{
+		margin-top: 30px;
+	}
+	.fil_type.fil_type.fil_type.fil_type{
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+	.office.office.office.office{
+		width: 350px;
+		gap: 10px;
+		.infa_title.infa_title.infa_title.infa_title{
+			font-size: 24px;
+		}
+	}
+	.office_infa_and_question.office_infa_and_question.office_infa_and_question.office_infa_and_question{
+		margin-top: 0px;
+	}
+	.top_catalog.top_catalog.top_catalog.top_catalog{
+		margin-bottom: 20px;
+	}
+	.korzina{
+		.modal.modal.modal.modal{
+			width: 400px;
+		}
+	}
+}
+@media screen and (max-width: 400px){
+	.sort_right.sort_right.sort_right.sort_right{
+		justify-content: space-between;
+		.search.search.search.search{
+			.search_input{
+				width: 140px;
+			}
+		}
+	}
+}
+@media screen and (max-width: 806px){
+	.orders_user_text.orders_user_text.orders_user_text.orders_user_text.orders_user_text.orders_user_text.orders_user_text.orders_user_text{
+		font-size: 20px;
+	}
+	.office_infa.office_infa.office_infa.office_infa{
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 750px){
+	.twits{
+		flex-direction: column;
 
+		.twits_flex{
+			order: -1;
+
+			.order_1{
+				position: static;
+			}
+			.twits_right.twits_right.twits_right.twits_right{
+				width: 100%;
+				flex-direction: row;
+				justify-content: space-between;
+				.twits_user{
+					flex-grow: 1;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 720px){
+	.twits_right.twits_right.twits_right.twits_right.twits_right.twits_right{
+		flex-direction: column;
+	}
+}
+@media screen and (max-width: 444px){
+	.korzina{
+		.modal.modal.modal.modal{
+			width: 350px;
+		}
+	}
+}
 </style>

@@ -135,6 +135,17 @@ export default {
                 transform: rotate(0.125turn);
             }
         }
-        
+    }
+    @media screen and (max-width: 669px){
+        .tovar_right{
+            flex-direction: column;
+
+            .tovar_korzina_text.tovar_korzina_text{
+                align-self: center;
+                display: inline-flex;
+                flex-direction: row;
+                align-items: center;
+            }
+        }
     }
 </style>

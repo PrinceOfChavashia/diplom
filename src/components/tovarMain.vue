@@ -86,4 +86,71 @@ export default {
         padding: 5px 15px;
         border-radius: 20px;
     } 
+    @media screen and (max-width: 1436px){
+        .card{
+            width: 330px;
+        }
+        .card img{
+            width: 330px;
+            background-color: #A64574;
+        }
+    }
+    @media screen and (max-width: 1220px){
+        .card{
+            width: 430px;
+        }
+        .card img{
+            width: 430px;
+            background-color: #A64574;
+        }
+    }
+    @media screen and (max-width: 1046px){
+        .card{
+            width: 380px;
+        }
+        .card img{
+            width: 380px;
+            background-color: #A64574;
+        }
+    }
+    @media screen and (max-width: 916px){
+        .card{
+            width: 330px;
+        }
+        .card img{
+            width: 330px;
+            height: 400px;
+            background-color: #A64574;
+        }
+    }
+    @media screen and (max-width: 788px){
+        .card{
+            width: 300px;
+        }
+        .card img{
+            width: 300px;
+            height: 400px;
+            background-color: #A64574;
+        }
+    }
+    @media screen and (max-width: 710px){
+        .card{
+            width: 250px;
+        }
+        .card img{
+            width: 250px;
+            height: 300px;
+            background-color: #A64574;
+        }
+    }
+    @media screen and (max-width: 581px){
+        .card{
+            width: 100%;
+        }
+        .card img{
+            width: 100%;
+            height: 300px;
+            background-color: #A64574;
+        }
+    }
 </style>

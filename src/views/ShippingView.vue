@@ -224,26 +224,29 @@
 	<h2 class="title">OUR SOCIAL NETWORKS</h2>
     <p class="title_description">We are trusted by marmalades from Russia, Ukraine, Germany and Italy</p>
 	<div class="social_cards">
-		<button class="social_sard">
-			<div class="social_card_top">
-				<svg width="60.000000" height="51.000000" viewBox="0 0 60 51" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <a href="https://t.me/Prince_of_Chavashia">
+        <button class="social_sard">
+          <div class="social_card_top">
+            <svg width="60.000000" height="51.000000" viewBox="0 0 60 51" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs/>
 					<path id="Vector" d="M59.07 0.96C58.34 0.06 57.24 -0.43 55.98 -0.43C55.29 -0.43 54.57 -0.29 53.82 -0.01L3.03 19.38C0.34 20.41 -0.03 21.95 0 22.78C0.02 23.61 0.47 25.13 3.22 26.01C3.24 26.01 3.25 26.02 3.27 26.02L13.8 29.04L19.5 45.33C20.28 47.55 22.02 48.93 24.05 48.93C25.33 48.93 26.59 48.39 27.69 47.38L34.21 41.38L43.66 48.99C43.66 48.99 43.66 48.99 43.66 48.99L43.75 49.06C43.76 49.07 43.77 49.08 43.78 49.08C44.83 49.9 45.98 50.33 47.1 50.33L47.1 50.33C49.29 50.33 51.03 48.71 51.54 46.2L59.86 5.11C60.19 3.46 59.91 1.99 59.07 0.96ZM17.33 28.46L37.65 18.08L25 31.53C24.79 31.75 24.64 32.02 24.57 32.31L22.13 42.2L17.33 28.46ZM25.31 44.79C25.23 44.87 25.14 44.94 25.06 45L27.32 35.83L31.44 39.15L25.31 44.79ZM56.41 4.41L48.09 45.5C48.01 45.9 47.75 46.81 47.1 46.81C46.77 46.81 46.36 46.64 45.95 46.31L35.24 37.69C35.23 37.69 35.23 37.69 35.23 37.69L28.86 32.56L47.16 13.11C47.75 12.49 47.8 11.53 47.29 10.85C46.77 10.16 45.84 9.95 45.08 10.34L14.98 25.72L4.3 22.66L55.07 3.28C55.5 3.12 55.8 3.08 55.98 3.08C56.08 3.08 56.28 3.09 56.35 3.18C56.44 3.3 56.56 3.68 56.41 4.41Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero" />
-				</svg>
-				<p class="social_card_name">Telegram</p>
-			</div>
-			<div class="corial_card_bottom">
-				<p class="corial_card_ich">marmelade_ich</p>
-				<svg width="22.000000" height="22.000000" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            </svg>
+            <p class="social_card_name">Telegram</p>
+          </div>
+          <div class="corial_card_bottom">
+            <p class="corial_card_ich">marmelade_ich</p>
+            <svg width="22.000000" height="22.000000" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs/>
 					<path id="Vector" d="M20.16 9.29C19.84 9.29 19.53 9.41 19.31 9.64C19.08 9.87 18.95 10.17 18.95 10.5L18.95 17.75C18.95 18.07 18.83 18.37 18.6 18.6C18.37 18.83 18.07 18.95 17.75 18.95L3.25 18.95C2.92 18.95 2.62 18.83 2.39 18.6C2.16 18.37 2.04 18.07 2.04 17.75L2.04 3.25C2.04 2.92 2.16 2.62 2.39 2.39C2.62 2.16 2.92 2.04 3.25 2.04L10.5 2.04C10.82 2.04 11.12 1.91 11.35 1.68C11.58 1.46 11.7 1.15 11.7 0.83C11.7 0.51 11.58 0.2 11.35 -0.03C11.12 -0.25 10.82 -0.38 10.5 -0.38L3.25 -0.38C2.28 -0.38 1.36 0 0.68 0.68C0 1.36 -0.38 2.28 -0.38 3.25L-0.38 17.75C-0.38 18.71 0 19.63 0.68 20.31C1.36 20.99 2.28 21.37 3.25 21.37L17.75 21.37C18.71 21.37 19.63 20.99 20.31 20.31C20.99 19.63 21.37 18.71 21.37 17.75L21.37 10.5C21.37 10.17 21.24 9.87 21.02 9.64C20.79 9.41 20.48 9.29 20.16 9.29Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero"/>
 					<path id="Vector" d="M15.33 2.04L17.24 2.04L9.64 9.63C9.52 9.74 9.43 9.87 9.37 10.02C9.31 10.17 9.28 10.32 9.28 10.48C9.28 10.64 9.31 10.8 9.37 10.95C9.43 11.09 9.52 11.23 9.64 11.34C9.75 11.45 9.88 11.54 10.03 11.61C10.18 11.67 10.34 11.7 10.5 11.7C10.65 11.7 10.81 11.67 10.96 11.61C11.11 11.54 11.24 11.45 11.35 11.34L18.95 3.75L18.95 5.66C18.95 5.98 19.08 6.29 19.31 6.52C19.53 6.74 19.84 6.87 20.16 6.87C20.48 6.87 20.79 6.74 21.02 6.52C21.24 6.29 21.37 5.98 21.37 5.66L21.37 0.83C21.37 0.51 21.24 0.2 21.02 -0.03C20.79 -0.25 20.48 -0.38 20.16 -0.38L15.33 -0.38C15.01 -0.38 14.7 -0.25 14.47 -0.03C14.25 0.2 14.12 0.51 14.12 0.83C14.12 1.15 14.25 1.46 14.47 1.68C14.7 1.91 15.01 2.04 15.33 2.04Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero"/>
-				</svg>
-			</div>
-		</button>
-		<button class="social_sard ">
-			<div class="social_card_top">
-				<svg width="46.000000" height="60.000000" viewBox="0 0 46 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            </svg>
+          </div>
+        </button>
+    </a>
+    <a href="https://www.tiktok.com/search?q=gym&t=1715772932477">
+        <button class="social_sard ">
+          <div class="social_card_top">
+            <svg width="46.000000" height="60.000000" viewBox="0 0 46 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs>
 						<clipPath id="clip19_123">
 							<rect id="tiktok-outline-svgrepo-com 2" width="46.000000" height="60.000000" fill="white" fill-opacity="0"/>
@@ -253,21 +256,23 @@
 					<g clip-path="url(#clip19_123)">
 						<path id="Vector" d="M16.92 23.37C8.38 23.56 1.49 30.57 1.49 39.17C1.49 43.33 3.11 47.11 5.74 49.95C8.63 53.04 12.75 55 17.3 55C26.02 55 33.11 47.9 33.11 39.17L33.11 21.7C36.48 24.12 40.61 25.54 45.06 25.54L45.06 16.95C44.19 16.95 43.36 16.86 42.56 16.69C39.98 16.14 37.72 14.75 36.05 12.83C34.22 10.73 33.11 7.99 33.11 5L30.82 5M36.05 12.83C36 12.8 35.96 12.77 35.92 12.74M11.46 43.37C10.6 42.19 10.09 40.74 10.09 39.16C10.09 35.18 13.33 31.94 17.3 31.94C18.05 31.94 18.77 32.07 19.44 32.28L19.44 23.5C18.74 23.41 18.04 23.35 17.3 23.35C17.18 23.35 16.15 23.42 16.02 23.42M30.81 5L24.52 5L24.51 39.44C24.37 43.29 21.19 46.39 17.3 46.39C14.89 46.39 12.77 45.2 11.45 " stroke="#FFD4E9" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
 					</g>
-				</svg>
-				<p class="social_card_name">Tik Tok</p>
-			</div>
-			<div class="corial_card_bottom">
-				<p class="corial_card_ich">marmelade_ich</p>
-				<svg width="22.000000" height="22.000000" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            </svg>
+            <p class="social_card_name">Tik Tok</p>
+          </div>
+          <div class="corial_card_bottom">
+            <p class="corial_card_ich">marmelade_ich</p>
+            <svg width="22.000000" height="22.000000" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs/>
 					<path id="Vector" d="M20.16 9.29C19.84 9.29 19.53 9.41 19.31 9.64C19.08 9.87 18.95 10.17 18.95 10.5L18.95 17.75C18.95 18.07 18.83 18.37 18.6 18.6C18.37 18.83 18.07 18.95 17.75 18.95L3.25 18.95C2.92 18.95 2.62 18.83 2.39 18.6C2.16 18.37 2.04 18.07 2.04 17.75L2.04 3.25C2.04 2.92 2.16 2.62 2.39 2.39C2.62 2.16 2.92 2.04 3.25 2.04L10.5 2.04C10.82 2.04 11.12 1.91 11.35 1.68C11.58 1.46 11.7 1.15 11.7 0.83C11.7 0.51 11.58 0.2 11.35 -0.03C11.12 -0.25 10.82 -0.38 10.5 -0.38L3.25 -0.38C2.28 -0.38 1.36 0 0.68 0.68C0 1.36 -0.38 2.28 -0.38 3.25L-0.38 17.75C-0.38 18.71 0 19.63 0.68 20.31C1.36 20.99 2.28 21.37 3.25 21.37L17.75 21.37C18.71 21.37 19.63 20.99 20.31 20.31C20.99 19.63 21.37 18.71 21.37 17.75L21.37 10.5C21.37 10.17 21.24 9.87 21.02 9.64C20.79 9.41 20.48 9.29 20.16 9.29Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero"/>
 					<path id="Vector" d="M15.33 2.04L17.24 2.04L9.64 9.63C9.52 9.74 9.43 9.87 9.37 10.02C9.31 10.17 9.28 10.32 9.28 10.48C9.28 10.64 9.31 10.8 9.37 10.95C9.43 11.09 9.52 11.23 9.64 11.34C9.75 11.45 9.88 11.54 10.03 11.61C10.18 11.67 10.34 11.7 10.5 11.7C10.65 11.7 10.81 11.67 10.96 11.61C11.11 11.54 11.24 11.45 11.35 11.34L18.95 3.75L18.95 5.66C18.95 5.98 19.08 6.29 19.31 6.52C19.53 6.74 19.84 6.87 20.16 6.87C20.48 6.87 20.79 6.74 21.02 6.52C21.24 6.29 21.37 5.98 21.37 5.66L21.37 0.83C21.37 0.51 21.24 0.2 21.02 -0.03C20.79 -0.25 20.48 -0.38 20.16 -0.38L15.33 -0.38C15.01 -0.38 14.7 -0.25 14.47 -0.03C14.25 0.2 14.12 0.51 14.12 0.83C14.12 1.15 14.25 1.46 14.47 1.68C14.7 1.91 15.01 2.04 15.33 2.04Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero"/>
-				</svg>
-			</div>
-		</button>
-		<button class="social_sard ">
-			<div class="social_card_top">
-				<svg width="59.000000" height="60.000000" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            </svg>
+          </div>
+        </button>
+    </a>
+    <a href="https://vk.com/id376932635">
+        <button class="social_sard ">
+          <div class="social_card_top">
+            <svg width="59.000000" height="60.000000" viewBox="0 0 59 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs>
 						<clipPath id="clip19_109">
 							<rect id="vk-svgrepo-com 2" width="59.000000" height="60.000000" fill="white" fill-opacity="0"/>
@@ -277,18 +282,19 @@
 					<g clip-path="url(#clip19_109)">
 						<path id="Vector" d="M58.51 42.16C57.15 39.42 55.36 36.92 53.2 34.75C52.47 33.9 51.61 33.05 50.94 32.4L50.84 32.31C50.5 31.97 50.21 31.69 49.98 31.44C52.92 27.35 55.45 22.96 57.5 18.35L57.59 18.16L57.64 17.97C57.91 17.06 58.23 15.34 57.12 13.78C55.99 12.17 54.16 11.88 52.94 11.88L47.32 11.88C46.15 11.82 44.99 12.14 44.01 12.78C43.02 13.43 42.26 14.38 41.85 15.48C40.64 18.36 39.12 21.11 37.33 23.66L37.33 17.08C37.33 16.23 37.25 14.8 36.34 13.6C35.25 12.16 33.67 11.88 32.58 11.88L23.66 11.88C22.51 11.85 21.4 12.26 20.54 13.03C19.66 13.81 19.12 14.91 19.04 16.08L19.03 16.19L19.03 16.31C19.03 17.52 19.51 18.42 19.89 18.98C20.07 19.23 20.25 19.46 20.37 19.61L20.39 19.64C20.52 19.79 20.6 19.9 20.68 20.01C20.9 20.31 21.22 20.76 21.3 21.95L21.3 25.63C19.77 23.11 18.15 19.74 16.93 16.15L16.91 16.1L16.89 16.04C16.58 15.25 16.1 14.09 15.12 13.2C13.98 12.17 12.63 11.88 11.4 11.88L5.7 11.88C4.46 11.88 2.96 12.17 1.84 13.35C0.74 14.5 0.62 15.89 0.62 16.63L0.62 16.96L0.69 17.29C2.27 24.62 5.52 31.48 10.19 37.34C12.31 40.68 15.18 43.48 18.58 45.51C22.02 47.58 25.91 48.8 29.92 49.07L30.03 49.08L30.13 49.08C31.95 49.08 33.84 48.92 35.26 47.97C37.18 46.69 37.33 44.73 37.33 43.75L37.33 40.91C37.82 41.3 38.44 41.84 39.18 42.56C40.09 43.46 40.81 44.25 41.43 44.93L41.75 45.3L41.76 45.3C42.24 45.84 42.71 46.36 43.14 46.79C43.68 47.34 44.34 47.94 45.18 48.38C46.09 48.86 47.04 49.07 48.05 49.07L53.75 49.07C54.96 49.07 56.68 48.79 57.89 47.38C59.21 45.85 59.11 43.98 58.7 42.63L58.62 42.39L58.51 42.16ZM44.21 42.42C43.57 41.71 42.79 40.87 41.81 39.89L41.81 39.88C38.42 36.61 36.83 36.04 35.71 36.04C35.12 36.04 34.46 36.11 34.03 36.64C33.83 36.89 33.72 37.2 33.66 37.51C33.6 37.83 33.58 38.2 33.58 38.62L33.58 43.75C33.58 44.39 33.48 44.65 33.18 44.85C32.79 45.11 31.95 45.32 30.15 45.33C26.74 45.09 23.44 44.06 20.5 42.3C17.57 40.54 15.09 38.1 13.27 35.19L13.25 35.16L13.23 35.13C8.88 29.72 5.85 23.36 4.37 16.57C4.38 16.24 4.45 16.05 4.56 15.92C4.68 15.8 4.97 15.63 5.7 15.63L11.4 15.63C12.03 15.63 12.36 15.76 12.6 15.98C12.87 16.22 13.1 16.63 13.38 17.37C14.78 21.49 16.67 25.33 18.46 28.16C19.36 29.58 20.24 30.76 21.03 31.59C21.43 32 21.82 32.35 22.19 32.59C22.55 32.83 22.96 33.01 23.37 33.01C23.59 33.01 23.85 32.99 24.1 32.88C24.37 32.76 24.58 32.57 24.72 32.3C24.98 31.83 25.05 31.14 25.05 30.23L25.05 21.82L25.05 21.8C24.92 19.76 24.31 18.61 23.7 17.79C23.57 17.61 23.44 17.45 23.33 17.31L23.3 17.27C23.17 17.11 23.07 16.98 22.99 16.86C22.84 16.65 22.78 16.49 22.78 16.33C22.8 16.13 22.89 15.95 23.04 15.82C23.19 15.69 23.39 15.62 23.59 15.63L32.58 15.63C33.09 15.63 33.27 15.75 33.35 15.87C33.48 16.03 33.58 16.37 33.58 17.08L33.58 28.4C33.58 29.74 34.2 30.65 35.1 30.65C36.14 30.65 36.88 30.03 38.19 28.72L38.21 28.7L38.23 28.67C41.16 25.1 43.55 21.13 45.33 16.87L45.34 16.84C45.48 16.46 45.73 16.14 46.06 15.92C46.4 15.7 46.8 15.6 47.19 15.62L47.22 15.63L52.94 15.63C53.72 15.63 53.98 15.82 54.06 15.94C54.15 16.07 54.21 16.34 54.06 16.86C52.01 21.45 49.47 25.81 46.49 29.86L46.47 29.89C46.18 30.33 45.86 30.82 45.82 31.38C45.77 31.99 46.03 32.54 46.49 33.12C46.82 33.62 47.51 34.29 48.2 34.97L48.27 35.03C49 35.75 49.79 36.52 50.43 37.27L50.44 37.29L50.46 37.31C52.36 39.2 53.93 41.39 55.13 43.78C55.32 44.43 55.2 44.76 55.05 44.93C54.88 45.14 54.49 45.32 53.75 45.32L48.05 45.32C47.6 45.32 47.26 45.23 46.93 45.06C46.59 44.88 46.24 44.59 45.8 44.15C45.44 43.79 45.05 43.36 44.58 42.83C44.46 42.7 44.34 42.56 44.21 42.42Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="evenodd"/>
 					</g>
-				</svg>
-				<p class="social_card_name">Vkontakte</p>
-			</div>
-			<div class="corial_card_bottom">
-				<p class="corial_card_ich">marmelade_ich</p>
-				<svg width="22.000000" height="22.000000" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            </svg>
+            <p class="social_card_name">Vkontakte</p>
+          </div>
+          <div class="corial_card_bottom">
+            <p class="corial_card_ich">marmelade_ich</p>
+            <svg width="22.000000" height="22.000000" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<defs/>
 					<path id="Vector" d="M20.16 9.29C19.84 9.29 19.53 9.41 19.31 9.64C19.08 9.87 18.95 10.17 18.95 10.5L18.95 17.75C18.95 18.07 18.83 18.37 18.6 18.6C18.37 18.83 18.07 18.95 17.75 18.95L3.25 18.95C2.92 18.95 2.62 18.83 2.39 18.6C2.16 18.37 2.04 18.07 2.04 17.75L2.04 3.25C2.04 2.92 2.16 2.62 2.39 2.39C2.62 2.16 2.92 2.04 3.25 2.04L10.5 2.04C10.82 2.04 11.12 1.91 11.35 1.68C11.58 1.46 11.7 1.15 11.7 0.83C11.7 0.51 11.58 0.2 11.35 -0.03C11.12 -0.25 10.82 -0.38 10.5 -0.38L3.25 -0.38C2.28 -0.38 1.36 0 0.68 0.68C0 1.36 -0.38 2.28 -0.38 3.25L-0.38 17.75C-0.38 18.71 0 19.63 0.68 20.31C1.36 20.99 2.28 21.37 3.25 21.37L17.75 21.37C18.71 21.37 19.63 20.99 20.31 20.31C20.99 19.63 21.37 18.71 21.37 17.75L21.37 10.5C21.37 10.17 21.24 9.87 21.02 9.64C20.79 9.41 20.48 9.29 20.16 9.29Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero"/>
 					<path id="Vector" d="M15.33 2.04L17.24 2.04L9.64 9.63C9.52 9.74 9.43 9.87 9.37 10.02C9.31 10.17 9.28 10.32 9.28 10.48C9.28 10.64 9.31 10.8 9.37 10.95C9.43 11.09 9.52 11.23 9.64 11.34C9.75 11.45 9.88 11.54 10.03 11.61C10.18 11.67 10.34 11.7 10.5 11.7C10.65 11.7 10.81 11.67 10.96 11.61C11.11 11.54 11.24 11.45 11.35 11.34L18.95 3.75L18.95 5.66C18.95 5.98 19.08 6.29 19.31 6.52C19.53 6.74 19.84 6.87 20.16 6.87C20.48 6.87 20.79 6.74 21.02 6.52C21.24 6.29 21.37 5.98 21.37 5.66L21.37 0.83C21.37 0.51 21.24 0.2 21.02 -0.03C20.79 -0.25 20.48 -0.38 20.16 -0.38L15.33 -0.38C15.01 -0.38 14.7 -0.25 14.47 -0.03C14.25 0.2 14.12 0.51 14.12 0.83C14.12 1.15 14.25 1.46 14.47 1.68C14.7 1.91 15.01 2.04 15.33 2.04Z" fill="#FFD4E9" fill-opacity="1.000000" fill-rule="nonzero"/>
-				</svg>
-			</div>
-		</button>
+            </svg>
+          </div>
+        </button>
+    </a>
 		<svg class="additional" version="1.1" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 595.28 841.89" style="enable-background:new 0 0 595.28 841.89;" xml:space="preserve">
                     <path fill="#A55679" d="M485.36,366.64c0,3.22-0.09,6.42-0.24,9.61c-0.63,12.75-2.51,25.14-5.55,37.08
 	c-7.23,28.69-20.93,54.76-39.53,76.59c-7.79,9.2-16.48,17.65-25.89,25.23c-32.61,26.22-74.08,41.92-119.22,41.92
@@ -527,6 +533,209 @@
     </section>
 </template>
 <style lang="scss">
+    .top_catalog{
+    width: clamp(24.714rem, 4.013rem + 77.285vw, 85.714rem);
+    margin: auto;
+    font-size: 16px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .nav_hint{
+      display: flex;
+      gap: 5px;
+      margin-bottom: 40px ;
+      
+      .nav_hint_left{
+        color: #A64574B3;
+        opacity: 0.7;
+      }
+      .nav_hint_right{
+        color: #A64574;
+      }
+    }
+
+    .fil_type{
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 40px;
+      margin-bottom: 40px;
+
+      button{
+        color: #A64574;
+        background-color: #fff;
+        font-size: 20px;
+        
+      }
+
+      button.green{
+        color: #81A645;
+      }
+    }
+    .sort{
+      display: flex;
+      justify-content: space-between;
+
+      .sort_left{
+        .sort_found{
+          font-size: 16px;
+          color: #A64574;
+        }
+        .select{
+          display: flex;
+          gap: 20px;
+          margin-bottom: 20px;
+        
+          .select_type{
+            .select_but{
+              display: flex;
+              align-items: center;
+              font-size: 16px;
+              color: #A64574;
+            }
+            .select_type_none{
+              display: none;
+            }
+          }
+        }
+      
+        .select_option{
+          background-color: #FFD4E9;
+          color: #A64574;
+          display: inline-flex;
+          flex-direction: column;
+          padding: 5px 0;
+          box-shadow: 0px 0px 15px 3px rgba(166, 69, 116, 0.25);
+          position: absolute;
+        
+          .option{
+            padding: 5px 5px;
+          }
+        
+          .option:hover{
+            background-color: #edb8d2;
+            opacity: 0.8;
+          }
+        }
+        .tagi{
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+          align-items: center;
+        
+          .tagi_clear{
+            color: #A64574;
+            text-decoration: underline dotted;
+          }
+          .tag{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background-color: #d794b4;
+            color:#A64574;
+            padding: 4px 9px;
+            border-radius: 15px;
+          }
+          .tag:hover{
+            background-color: #edb8d2;
+            color:#A64574;
+            opacity: 0.7;
+          }
+        }
+      }
+      .sort_right{
+        display: inline-flex;
+        align-items: flex-start;
+        gap: 10px;
+        // .select_type_none{
+        //   display: none;
+        // }
+        .search{
+          display: inline-flex;
+          align-items: center;
+          border: 1px solid rgba(166, 69, 116, 0.45);
+          border-radius: 5px;
+          background-color: rgba(166, 69, 116, 0.1);
+          padding: 4.5px;
+          padding-left: 8px;
+          font-size: 16px;
+          height: 29px;
+          //padding-right: 4.5px;
+
+          .search_input{
+            //margin: 4.5px;
+            border: none;
+            background-color: rgba(166, 69, 116, 0.0);
+            border-radius: 0;
+            color: #A64574B3;
+          }
+          .search_input::placeholder{
+            color: #A64574B3;
+          }
+          .search_svg{
+            padding-left: 4.5px;
+            border-left: 1px solid rgba(166, 69, 116, 0.45);
+          }
+        }
+        .sort_select{
+          //border: 1px solid rgba(166, 69, 116, 0.45);
+          //padding: 2px 8px 2px 4px;
+          //border-radius: 5px;
+          //background-color: rgba(166, 69, 116, 0.1);
+          //width: 160px;
+
+          .select_but{
+            border: 1px solid rgba(166, 69, 116, 0.45);
+            border-radius: 5px;
+            padding: 0px 8px 0px 4px;
+            height: 29px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 5px;
+            align-items: center;
+            font-size: 16px;
+            //line-height: 19px;
+            color: #A64574;
+            background-color: rgba(166, 69, 116, 0.1);
+            width: 160px;
+            white-space: nowrap;
+            
+            p{
+              overflow: hidden;
+            }
+          }
+          .select_sort_options{
+            //background-color: #FFD4E9;
+            color: #A64574;
+            display: inline-flex;
+            flex-direction: column;
+            padding: 5px 0;
+            gap: 2px;
+            background-color: #f6ecf1;
+            //background-color: rgba(166, 69, 116, 0.1);
+            box-shadow: 0px 0px 15px 3px rgba(166, 69, 116, 0.25);
+            position: absolute;
+            
+            // display: inline-flex;
+            // flex-direction: column;
+            .sort_select_option{
+              padding: 5px 3px;
+            }
+            .sort_select_option:hover{
+              background-color: #a6457433;
+              //background-color: rgba(166, 69, 116, 0.2);
+              opacity: 0.8;
+            }
+          }
+          .select_type_none{
+            display: none;
+          }
+        }
+      }
+    }
+    }  
     .top_catalog{
         .anchors{
             margin-top: 25px;
